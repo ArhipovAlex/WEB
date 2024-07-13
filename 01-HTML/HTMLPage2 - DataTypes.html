@@ -29,6 +29,44 @@
             <li>
                 <strong>Логические типы.</strong> Включает в себя всего один тип данных &ndash; <strong><tt style="color:blue">bool</tt> (boolean)</strong>. Переменная типа  <strong><tt style="color:blue">bool</tt></strong> занимает 1 Байт памяти и принимает одно из двух значений: <strong><tt style="color:blue">true</tt></strong> или <strong><tt style="color:blue">false</tt></strong>. <strong><tt style="color:blue">true</tt></strong> хранится в памяти как 1, а <strong><tt style="color:blue">false</tt></strong> как 0. На самом деле 0 &ndash; это <strong><tt style="color:blue">false</tt></strong>, а <strong><tt style="color:blue">true</tt></strong> &ndash; это все что не 0;
             </li>
+            <li>
+                <strong>Числовые типы.</strong> Включает в себя два подтипа данных:<br />
+                <strong><p style="color:deepskyblue">Целочисленные типы:</p></strong>
+                <ul type="disc">
+                    <li>
+                        <strong><tt style="color:blue">short</tt></strong>. Переменная типа <strong><tt style="color:blue">short</tt></strong> занимает 2 Байта памяти, и принимает значения в диапазоне<br />																												<pre><strong><tt style="color:blue">unsigned short</tt></strong>: 0...65 535; 0000 0000  0000 0000 ... 1111 1111  1111 1111; 
+                0...2<sup>16</sup>-1
+<strong><tt style="color:blue">signed short</tt></strong>: -32 768...32 767; 
+              -2<sup>15</sup>...+2<sup>15</sup>-1</pre>
+                    </li>
+                    <li>
+                        <strong><tt style="color:blue">long</tt></strong> &ndash; занимает 4 Байта памяти, и принимает значения в диапазоне<br />
+                        <pre>
+<strong><tt style="color:blue">unsigned long</tt></strong>: 0 ... 4 294 967 295;
+               0 ... 2<sup>32</sup>-1;
+<strong><tt style="color:blue">signed long</tt></strong>: -2 147 483 648 ... 2 147 483 647;
+             -2<sup>31</sup> ... +2<sup>31</sup>-1;
+</pre>
+                    </li>
+                    <li>
+                        <strong><tt style="color:blue">int</tt></strong> (<strong>Integer</strong> &ndash; Целое число). Платформенно зависимый тип данных, его величина зависит от процессора (CPU) операционной системы (ОС) и среды разработки (IDE &ndash; Integrated Development Environment). В Visual Studio для Microsoft Windows тип данных <strong><tt style="color:blue">int</tt></strong> занимает 4 Байта, следовательно, его диапазоны принимаемых значений полностью совпадают с <strong><tt style="color:blue">long</tt></strong>.
+                    </li>
+                    <li>
+                        <strong><tt style="color:blue">long long</tt></strong>. Занимает 8 Байт памяти, и принимает значения в диапазоне
+<pre>
+<strong><tt style="color:blue">unsigned long long int</tt></strong>: 0 ... 2<sup>64</sup>-1;
+<strong><tt style="color:blue">signed long long int</tt></strong>: -2<sup>63</sup> ... +2<sup>63</sup>-1;
+</pre>
+                    </li>
+                </ul>
+                <strong><p style="color:deepskyblue">Вещественные типы:</p></strong>
+                <p>Вещественные типы предназначениы для хранения дробных чисел, (чисел с плавающей запятой).</p>
+                <p>Вехественные типы есть только знаковые, они не могут быть <strong><tt style="color:blue">unsigned</tt></strong>. В языке С++ есть всего два вещественных типа: <strong><tt style="color:blue">float</tt></strong> и <strong><tt style="color:blue">double</tt></strong>.</p>
+                <p><strong><tt style="color:blue">float</tt></strong> &ndash; вещественный тип одинарной точности, занимает 4 Байта памяти.</p>
+                <p><strong><tt style="color:blue">double</tt></strong> &ndash; вещественный тип двойной точности, занимает 8 Байт памяти.</p>
+                <p><strong><tt style="color:blue">float</tt></strong> и <strong><tt style="color:blue">double</tt></strong> могут хранить ОЧЕНЬ БОЛЬШИЕ и ОЧЕНЬ МАЛЕНЬКИЕ числа, но эти числе могут быть не совсем точными.</p>
+                <p>Разделителем целой и дробной части у <strong><tt style="color:blue">float</tt></strong> и <strong><tt style="color:blue">double</tt></strong> является точка, а не запятая.</p>
+            </li>
         </ol>
     </p>
 </body>
