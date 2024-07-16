@@ -2,35 +2,41 @@
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8">
     <title>Logical Descriptors</title>
+	<link rel="stylesheet" href="Fonts.css"
+	<link rel="stylesheet" href="StyleSheet1.css">
 </head>
 <body>
-    <h1>Дескрипторы логического форматирования</h1>
-    <p title="Всплывающая подсказка">
-        <strong>Visual Studio</strong> - лучшая в мире <acronym title="Integrated Development Environment (Интегрированная среда разработки)">IDE</acronym>
-    </p>
-    <p title="Проверка дескриптора cite">
-        <cite title="Цитаты великих людей">Сколько стоит килограмм гвоздей, если пики козырь.</cite>
-    </p>
-    <p>
-        Цикл <strong><tt>for</tt></strong> пишется следующим образом:
-        <samp>
-            <pre>
-            for(int i=0; i < n; i++)
+	<h1>Дескрипторы логического форматирования (Logical)</h1>
+	<p title="Всплывающая подсказка">
+		<strong>Visual Studio</strong> - лучшая в мире <abbr title="Integrated Development Environment (Интегрированная среда разработки)">IDE</abbr>
+	</p>
+	<p title="Проверка дескриптора cite">
+		<cite title="Цитаты великих людей">Сколько стоит килограмм гвоздей, если пики козырь.</cite>
+	</p>
+
+	<p>
+		Цикл <strong><code>for</code></strong> пишется следующим образом:
+	</p>	
+	<pre>
+		<samp>
+			
+            for(int i=0; i &lt; n; i++)
             { 
                 group-of-statements;
             }
-            </pre>
-        </samp>
-    </p>
-    <p>
-        <longquote>blockquote</longquote>
-        <ins>Inserted Text</ins><br />
-        <br />
-        <var>Variable</var>
-    </p>
+            
+		</samp>
+	</pre>
+	<blockquote>blockquote &ndash; это блочный дескриптор, который всегда пишется за пределами дескриптора &lt;p&gt;.</blockquote>
+	<p>
 
+		<ins>Inserted Text</ins>
+	</p>
+	<p>
+		<var>Variable</var>
+	</p>
 
 </body>
 </html>

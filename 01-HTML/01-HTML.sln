@@ -5,9 +5,15 @@ VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3565A190-AAF0-4AF8-9D80-6C69DBC8E42A}"
 	ProjectSection(SolutionItems) = preProject
+		Fonts.css = Fonts.css
 		HTMLPage1-LogicalFormat.html = HTMLPage1-LogicalFormat.html
 		HTMLPage2 - DataTypes.html = HTMLPage2 - DataTypes.html
+		HTMLPage3 - Lists.html = HTMLPage3 - Lists.html
+		HTMLPage4 - Fonts.html = HTMLPage4 - Fonts.html
+		HTMLPage5 - CSS.html = HTMLPage5 - CSS.html
+		HTMLPage6-DescriptorsRelations.html = HTMLPage6-DescriptorsRelations.html
 		index.html = index.html
+		StyleSheet1.css = StyleSheet1.css
 	EndProjectSection
 EndProject
 Global
