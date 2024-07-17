@@ -1,0 +1,69 @@
+﻿body {
+    font-family: Arial;
+    font-weight: bold;
+}
+ol{
+    list-style-type:upper-roman;
+}
+ol > li:nth-child(5n+1){
+    color:red;
+}
+ol > li:nth-child(5n+2) {
+    color: orange;
+}
+ol > li:nth-child(5n+3) {
+    color: green;
+}
+ol > li:nth-child(5n+4) {
+    color: blue;
+}
+ol > li:nth-child(5n) {
+    color:purple;
+}
+ol ol li:nth-child(5n+1) {
+        color: black
+    }
+ol ol li:nth-child(5n+2) {
+        color: black
+    }
+ol ol li:nth-child(5n+3) {
+        color: black
+    }
+ol ol li:nth-child(5n+4) {
+        color: black
+    }
+ol ol li:nth-child(5n) {
+        color: black
+    }
+li > ol{
+    color:black;
+}
+li > ul{
+    color:black;
+}
+li > ol{
+    color:black;
+    list-style-type:lower-latin;
+}
+    li > ol ol {
+        color: black;
+        list-style-image: url(oran.png)
+    }
+    li > ol ol ol {
+        color: black;
+        list-style-image: url(greencheck.png)
+    }
+
+li > ul{
+    color:black;
+    list-style-image:url(red.png)
+}
+
+li > ul ul {
+        color: black;
+        list-style-image: url(bluecheck.svg)
+    }
+ li > ul ul ul {
+            color: black;
+            list-style-image: url(chest.svg)
+        }

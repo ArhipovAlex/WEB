@@ -1,0 +1,19 @@
+﻿body
+{
+    background-color:burlywood;
+}
+ul{
+    /*color:blue;*/
+    /*list-style-type:circle;
+    list-style-image:url(litecoin.png);
+    list-style-position:inside;*/
+    list-style:circle url(litecoin.png) inside;
+}
+ol{
+    /*color:green;*/
+    list-style-type:lower-latin;
+    list-style-image:none;
+}
+.bitcoin{
+    list-style-image:url(bitcoin.png)
+}
