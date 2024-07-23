@@ -35,11 +35,17 @@ table
 {
     border:solid;
     border-collapse:collapse;
-    
+    width: 45%;
+    /*выравнивание содержимого таблицы*/
+    text-align:center;
+    /*выравнивание таблицы по центру*/
+    margin-left:auto;
+    margin-right:auto;
 }
 table thead
 {
     background-color:Highlight;
+    color:white;
 }
 table th, table td
 {
@@ -47,6 +53,13 @@ table th, table td
     border-right:solid;
     border-left:solid;
     border-width:1px;
+}
+.leftHeader{
+    text-align:left;
+    padding:10px;
+}
+th{
+    padding:20px;
 }
 ul
 {
@@ -72,4 +85,15 @@ a:hover{
 /*Активная ссылка на которую мы нажали*/
 a:active{
     color:lime;
+}
+
+#content{
+    width:80%;
+    height:50%;
+    border-style:solid;
+    border-width:1px;
+    /*20px - сверху снизу, а 10рх - справа слева*/
+    padding:20px 10px;
+    /*20px - сверху, а 10рх - справа слева, 40px - снизу*/
+    padding:20px 10px 40px;
 }
