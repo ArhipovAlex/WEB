@@ -4,8 +4,8 @@
 table
 {
     width:100%;
-    border-collapse:collapse;
-    background-color:rgb(60, 60, 60);
+    border-collapse:separate;
+    background-color:rgb(50, 50, 50);
     color:white;
     font-family:Arial;
 }
@@ -17,7 +17,7 @@ table th, table td
     border-right: solid;
     border-left: solid;
     border-width: 1px;
-    border-color:white;
+    border-color:gray;
 }
 td.num
 {
@@ -28,21 +28,53 @@ td.num
 
 td.hard
 {
-    color:gray;
+    color:silver;
 }
 td.liquid
 {
-    color:blueviolet;
+    color:aqua;
 }
 td.gas
 {
     color:orangered;
 }
-td.uknown
+td.unknown
 {
-    color:
+    color:chartreuse;
 }
-td.nonmetal
+td.nonMetal
 {
     background-color:darkolivegreen;
+}
+td.royalGas
+{
+    background-color:purple;
+}
+td.alkalMetal
+{
+    background-color:chocolate;
+}
+td.alkaEarthMetal
+{
+    background-color:darkgoldenrod;
+}
+td.lantanid
+{
+    background-color:saddlebrown;
+}
+td.aktinoid
+{
+    background-color:crimson;
+}
+td.transMetal
+{
+    background-color:brown;
+}
+td.postMetal
+{
+    background-color:darkblue;
+}
+td.semiMetal
+{
+    background-color:teal;
 }
