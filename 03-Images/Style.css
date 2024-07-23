@@ -9,6 +9,10 @@ h1
 {
     font-family:'Playwrite CU',Arial;
 }
+h4
+{
+    text-align:center;
+}
 p
 {
     font-size:18px;
@@ -43,4 +47,29 @@ table th, table td
     border-right:solid;
     border-left:solid;
     border-width:1px;
+}
+ul
+{
+    list-style:none;
+}
+/*Ссылка*/
+a
+{
+    color:Highlight;
+}
+/*Посещенная ссылка*/
+a:visited
+{
+    color:darkblue;
+}
+
+/*Наведение мышм на ссылку*/
+a:hover{
+    background-color:Highlight;
+    color:white;
+    font-size:x-large;
+}
+/*Активная ссылка на которую мы нажали*/
+a:active{
+    color:lime;
 }
