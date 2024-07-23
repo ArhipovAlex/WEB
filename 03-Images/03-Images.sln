@@ -8,9 +8,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		HTMLPage1-RAM.html = HTMLPage1-RAM.html
 		HTMLPage2-Table.html = HTMLPage2-Table.html
 		HTMLPage3-Ship.html = HTMLPage3-Ship.html
+		HTMLPage4 - Mendeleev.html = HTMLPage4 - Mendeleev.html
 		index.html = index.html
 		Style.css = Style.css
 		Style2.css = Style2.css
+		StyleMendeleev.css = StyleMendeleev.css
 	EndProjectSection
 EndProject
 Global

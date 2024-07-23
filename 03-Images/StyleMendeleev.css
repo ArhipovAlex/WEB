@@ -1,0 +1,48 @@
+﻿body
+{
+}
+table
+{
+    width:100%;
+    border-collapse:collapse;
+    background-color:rgb(60, 60, 60);
+    color:white;
+    font-family:Arial;
+}
+table th, table td
+{
+    height:10px;
+
+    border-block: solid;
+    border-right: solid;
+    border-left: solid;
+    border-width: 1px;
+    border-color:white;
+}
+td.num
+{
+    color:mediumslateblue;
+    text-align:center;
+    font-size:10px;
+}
+
+td.hard
+{
+    color:gray;
+}
+td.liquid
+{
+    color:blueviolet;
+}
+td.gas
+{
+    color:orangered;
+}
+td.uknown
+{
+    color:
+}
+td.nonmetal
+{
+    background-color:darkolivegreen;
+}
