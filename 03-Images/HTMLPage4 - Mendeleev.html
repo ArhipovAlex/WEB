@@ -3,1098 +3,1189 @@
 <html lang="ru" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8">
-    <title>Таблица Менделеева</title>
+    <title>Интерактивная Таблица Менделеева</title>
     <link rel="stylesheet" href="StyleMendeleev.css">
 </head>
 <body>
-    <table>
-        <tr>
-            <td></td>
-            <td class="num" style="font-size:16px">1</td>
-            <td class="num" style="font-size:16px">2</td>
-            <td class="num" style="font-size:16px">3</td>
-            <td class="num" style="font-size:16px">4</td>
-            <td class="num" style="font-size:16px">5</td>
-            <td class="num" style="font-size:16px">6</td>
-            <td class="num" style="font-size:16px">7</td>
-            <td class="num" style="font-size:16px">8</td>
-            <td class="num" style="font-size:16px">9</td>
-            <td class="num" style="font-size:16px">10</td>
-            <td class="num" style="font-size:16px">11</td>
-            <td class="num" style="font-size:16px">12</td>
-            <td class="num" style="font-size:16px">13</td>
-            <td class="num" style="font-size:16px">14</td>
-            <td class="num" style="font-size:16px">15</td>
-            <td class="num" style="font-size:16px">16</td>
-            <td class="num" style="font-size:16px">17</td>
-            <td class="num" style="font-size:16px">18</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td class="hard">Твердое</td>
-            <td class="num" style="color:white" colspan="5">Металлы</td>
-            <td class="num semiMetal" style="color:white; writing-mode:vertical-rl" rowspan="4">Полуметаллы</td>
-            <td class="num" style="color:white" colspan="2">Неметаллы</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td class="num" style="color:deepskyblue;">
-<pre>
-Подгруппа
-азота
-</pre>
-            </td>
-            <td class="num" style="color:deepskyblue">Хелькогены</td>
-            <td class="num" style="color:deepskyblue">Галогены</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td class="num" style="font-size:16px">1</td>
-            <td class="gas nonMetal">
-<pre>
-1
-<code style="font-weight:bold; font-size:16px">H</code>
-Водород
-1,008
-</pre>
-            </td>
-            <td>
-<pre>
-Номер
-<code style="font-weight:bold; font-size:16px">Знак</code>
-Имя
-Вес атома
-</pre>
-            </td>
-            <td class="liquid">Жидкость</td>
-            <td class="num alkalMetal" rowspan="3" style="color:white; writing-mode:vertical-rl">
-                Щелочные металлы
-            </td>
-            <td class="num alkaEarthMetal" rowspan="3" style="color:white; writing-mode:vertical-rl">Щелочноземельные металлы</td>
-            <td class="num lantanid" style="color:white">Лантаноиды</td>
-            <td class="num transMetal" rowspan="3" style="color:white; writing-mode:vertical-rl">Переходные металлы</td>
-            <td class="num postMetal" rowspan="3" style="color:white; writing-mode:vertical-rl">Постпереходные металлы</td>
-            <td class="num nonMetal" rowspan="3" style="color:white; writing-mode:vertical-rl">Неметаллы</td>
-            <td class="num royalGas" rowspan="3" style="color:white; writing-mode:vertical-rl">Благородные газы</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td class="gas royalGas">
-<pre>
-2
-<code style="font-weight:bold; font-size:16px">He</code>
-Гелий
-4,0026
-</pre>
-            </td>
-        </tr>
+	<!--
+		<div>
+			<table>
+				<tr>
+					<td></td>
+					<td class="num" style="font-size:16px">1</td>
+					<td class="num" style="font-size:16px">2</td>
+					<td class="num" style="font-size:16px">3</td>
+					<td class="num" style="font-size:16px">4</td>
+					<td class="num" style="font-size:16px">5</td>
+					<td class="num" style="font-size:16px">6</td>
+					<td class="num" style="font-size:16px">7</td>
+					<td class="num" style="font-size:16px">8</td>
+					<td class="num" style="font-size:16px">9</td>
+					<td class="num" style="font-size:16px">10</td>
+					<td class="num" style="font-size:16px">11</td>
+					<td class="num" style="font-size:16px">12</td>
+					<td class="num" style="font-size:16px">13</td>
+					<td class="num" style="font-size:16px">14</td>
+					<td class="num" style="font-size:16px">15</td>
+					<td class="num" style="font-size:16px">16</td>
+					<td class="num" style="font-size:16px">17</td>
+					<td class="num" style="font-size:16px">18</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td class="hard" id="hardMaterial">Твердое</td>
+					<td class="num" style="color:white" colspan="5">Металлы</td>
+					<td class="num semiMetal" style="color:white; writing-mode:vertical-rl" rowspan="4">Полуметаллы</td>
+					<td class="num" style="color:white" colspan="2">Неметаллы</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td class="num" style="color:deepskyblue;">
+	<pre>
+	Подгруппа
+	азота
+	</pre>
+					</td>
+					<td class="num" style="color:deepskyblue">Хелькогены</td>
+					<td class="num" style="color:deepskyblue">Галогены</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td class="num" style="font-size:16px">1</td>
+					<td class="gas nonMetal">
+	<pre>
+	1
+	<code style="font-weight:bold; font-size:16px">H</code>
+	Водород
+	1,008
+	</pre>
+					</td>
+					<td>
+	<pre>
+	Номер
+	<code style="font-weight:bold; font-size:16px">Знак</code>
+	Имя
+	Вес атома
+	</pre>
+					</td>
+					<td class="liquid">Жидкость</td>
+					<td class="num alkalMetal" rowspan="3" style="color:white; writing-mode:vertical-rl">
+						Щелочные металлы
+					</td>
+					<td class="num alkaEarthMetal" rowspan="3" style="color:white; writing-mode:vertical-rl">Щелочноземельные металлы</td>
+					<td class="num lantanid" style="color:white">Лантаноиды</td>
+					<td class="num transMetal" rowspan="3" style="color:white; writing-mode:vertical-rl">Переходные металлы</td>
+					<td class="num postMetal" rowspan="3" style="color:white; writing-mode:vertical-rl">Постпереходные металлы</td>
+					<td class="num nonMetal" rowspan="3" style="color:white; writing-mode:vertical-rl">Неметаллы</td>
+					<td class="num royalGas" rowspan="3" style="color:white; writing-mode:vertical-rl">Благородные газы</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td class="gas royalGas">
+	<pre>
+	2
+	<code style="font-weight:bold; font-size:16px">He</code>
+	Гелий
+	4,0026
+	</pre>
+					</td>
+				</tr>
 
-        <tr>
-            <td class="num" style="font-size:16px">2</td>
-            <td class="hard alkalMetal">
-<pre>
-3
-<code style="font-weight:bold; font-size:16px">Li</code>
-Литий
-6,94
-</pre>
-            </td>
-            <td class="hard alkaEarthMetal">
-<pre>
-4
-<code style="font-weight:bold; font-size:16px">Be</code>
-Бериллий
-9,0122
-</pre>
-            </td>
-            <td class="gas">Газ</td>
-            <td class="num aktinoid" rowspan="2" style="color:white">Актиноиды</td>
-            <td></td>
-            <td class="hard semiMetal">
-<pre>
-5
-<code style="font-weight:bold; font-size:16px">B</code>
-Бор
-10,81
-</pre>
-            </td>
-            <td class="hard nonMetal">
-<pre>
-6
-<code style="font-weight:bold; font-size:16px">C</code>
-Углерод
-12,011
-</pre>
-            </td>
-            <td class="gas nonMetal">
-<pre>
-7
-<code style="font-weight:bold; font-size:16px">N</code>
-Азот
-14,007
-</pre>
-            </td>
-            <td class="gas nonMetal">
-<pre>
-8
-<code style="font-weight:bold; font-size:16px">O</code>
-Кислород
-15,999
-</pre>
-            </td>
-            <td class="gas nonMetal">
-<pre>
-9
-<code style="font-weight:bold; font-size:16px">F</code>
-Фтор
-18,998
-</pre>
-            </td>
-            <td class="gas royalGas">
-<pre>
-10
-<code style="font-weight:bold; font-size:16px">Ne</code>
-Неон
-20,18
-</pre>
-            </td>
-        </tr>
+				<tr>
+					<td class="num" style="font-size:16px">2</td>
+					<td class="hard alkalMetal">
+							<pre>
+	3
+	<code style="font-weight:bold; font-size:16px">Li</code>
+	Литий
+	6,94
+	</pre>
+					</td>
+					<td class="hard alkaEarthMetal">
+	<pre>
+	4
+	<code style="font-weight:bold; font-size:16px">Be</code>
+	Бериллий
+	9,0122
+	</pre>
+					</td>
+					<td class="gas">Газ</td>
+					<td class="num aktinoid" rowspan="2" style="color:white">Актиноиды</td>
+					<td></td>
+					<td class="hard semiMetal">
+	<pre>
+	5
+	<code style="font-weight:bold; font-size:16px">B</code>
+	Бор
+	10,81
+	</pre>
+					</td>
+					<td class="hard nonMetal">
+	<pre>
+	6
+	<code style="font-weight:bold; font-size:16px">C</code>
+	Углерод
+	12,011
+	</pre>
+					</td>
+					<td class="gas nonMetal">
+	<pre>
+	7
+	<code style="font-weight:bold; font-size:16px">N</code>
+	Азот
+	14,007
+	</pre>
+					</td>
+					<td class="gas nonMetal">
+	<pre>
+	8
+	<code style="font-weight:bold; font-size:16px">O</code>
+	Кислород
+	15,999
+	</pre>
+					</td>
+					<td class="gas nonMetal">
+	<pre>
+	9
+	<code style="font-weight:bold; font-size:16px">F</code>
+	Фтор
+	18,998
+	</pre>
+					</td>
+					<td class="gas royalGas">
+	<pre>
+	10
+	<code style="font-weight:bold; font-size:16px">Ne</code>
+	Неон
+	20,18
+	</pre>
+					</td>
+				</tr>
 
-        <tr>
-            <td class="num" style="font-size:16px">3</td>
-            <td class="hard alkalMetal">
-<pre>
-11
-<code style="font-weight:bold; font-size:16px">Na</code>
-Натрий
-22,99
-</pre>
-            </td>
-            <td class="hard alkaEarthMetal">
-<pre>
-12
-<code style="font-weight:bold; font-size:16px">Mg</code>
-Магний
-24,305
-</pre>
-            </td>
-            <td class="unknown">Неизвестно</td>
-            <td></td>
-            <td class="hard postMetal">
-<pre>
-13
-<code style="font-weight:bold; font-size:16px">Al</code>
-Алюминий
-26,982
-</pre>
-            </td>
-            <td class="hard semiMetal">
-<pre>
-14
-<code style="font-weight:bold; font-size:16px">Si</code>
-Кремний
-28,085
-</pre>
-            </td>
-            <td class="hard nonMetal">
-<pre>
-15
-<code style="font-weight:bold; font-size:16px">P</code>
-Фосфор
-30,974
-</pre>
-            </td>
-            <td class="hard nonMetal">
-<pre>
-16
-<code style="font-weight:bold; font-size:16px">S</code>
-Сера
-32,06
-</pre>
-            </td>
-            <td class="gas nonMetal">
-<pre>
-17
-<code style="font-weight:bold; font-size:16px">Cl</code>
-Хлор
-35,45
-</pre>
-            </td>
-            <td class="gas royalGas">
-<pre>
-18
-<code style="font-weight:bold; font-size:16px">Ar</code>
-Аргон
-39,948
-</pre>
-            </td>
-        </tr>
-        <tr>
-            <td class="num" style="font-size:16px">4</td>
-            <td class="hard alkalMetal">
-<pre>
-19
-<code style="font-weight:bold; font-size:16px">K</code>
-Калий
-39,098
-</pre>
-            </td>
-            <td class="hard alkaEarthMetal">
-<pre>
-20
-<code style="font-weight:bold; font-size:16px">Ca</code>
-Кальций
-40,078
-</pre>
-            </td>
-            <td class="hard transMetal">
-<pre>
-21
-<code style="font-weight:bold; font-size:16px">Sc</code>
-Скандий
-44,956
-</pre>
-            </td>
-            <td class="hard transMetal">
-<pre>
-22
-<code style="font-weight:bold; font-size:16px">Ti</code>
-Титан
-47,867
-</pre>
-            </td>
-            <td class="hard transMetal">
-<pre>
-23
-<code style="font-weight:bold; font-size:16px">V</code>
-Ванадий
-50,942
-</pre>
-            </td>
-            <td class="hard transMetal">
-<pre>
-24
-<code style="font-weight:bold; font-size:16px">Cr</code>
-Хром
-51,996
-</pre>
-            </td>
-            <td class="hard transMetal">
-<pre>
-25
-<code style="font-weight:bold; font-size:16px">Mg</code>
-Марганец
-54,938
-</pre>
-            </td>
-            <td class="hard transMetal">
-<pre>
-26
-<code style="font-weight:bold; font-size:16px">Fe</code>
-Железо
-55,845
-</pre>
-            </td>
-            <td class="hard transMetal">
-<pre>
-27
-<code style="font-weight:bold; font-size:16px">Co</code>
-Кобальт
-58,933
-</pre>
-            </td>
-            <td class="hard transMetal">
-<pre>
-28
-<code style="font-weight:bold; font-size:16px">Ni</code>
-Никель
-58,693
-</pre>
-            </td>
-            <td class="hard transMetal">
-<pre>
-29
-<code style="font-weight:bold; font-size:16px">Cu</code>
-Медь
-63,546
-</pre>
-            </td>
-            <td class="hard transMetal">
-<pre>
-30
-<code style="font-weight:bold; font-size:16px">Zn</code>
-Цинк
-65,38
-</pre>
-            </td>
-            <td class="hard postMetal">
-<pre>
-31
-<code style="font-weight:bold; font-size:16px">Ga</code>
-Галлий
-69,723
-</pre>
-            </td>
-            <td class="hard semiMetal">
-<pre>
-32
-<code style="font-weight:bold; font-size:16px">Ge</code>
-Германий
-72,630
-</pre>
-            </td>
-            <td class="hard semiMetal">
-<pre>
-33
-<code style="font-weight:bold; font-size:16px">As</code>
-Мышьяк
-74,922
-</pre>
-            </td>
-            <td class="hard nonMetal">
-<pre>
-34
-<code style="font-weight:bold; font-size:16px">Se</code>
-Селен
-78,971
-</pre>
-            </td>
-            <td class="liquid nonMetal">
-<pre>
-35
-<code style="font-weight:bold; font-size:16px">Br</code>
-Бром
-79,904
-</pre>
-            </td>
-            <td class="gas royalGas">
-<pre>
-36
-<code style="font-weight:bold; font-size:16px">Kr</code>
-Криптон
-83,798
-</pre>
-            </td>
-        </tr>
-        <tr>
-            <td class="num" style="font-size:16px">5</td>
-            <td class="hard alkalMetal">
-<pre>
-37
-<code style="font-weight:bold; font-size:16px">Rb</code>
-Рубидий
-85,468
-</pre>
-            </td>
-            <td class="hard alkaEarthMetal">
-<pre>
-38
-<code style="font-weight:bold; font-size:16px">Sr</code>
-Стронций
-87,62
-</pre>
-            </td>
-            <td class="hard transMetal">
-<pre>
-39
-<code style="font-weight:bold; font-size:16px">Y</code>
-Иттрий
-88,906
-</pre>
-            </td>
-            <td class="hard transMetal">
-<pre>
-40
-<code style="font-weight:bold; font-size:16px">Zr</code>
-Цирконий
-91,224
-</pre>
-            </td>
-            <td class="hard transMetal">
-<pre>
-41
-<code style="font-weight:bold; font-size:16px">Nb</code>
-Ниобий
-92,906
-</pre>
-            </td>
-            <td class="hard transMetal">
-<pre>
-42
-<code style="font-weight:bold; font-size:16px">Mo</code>
-Молибден
-95,95
-</pre>
-            </td>
-            <td class="hard transMetal">
-<pre>
-43
-<code style="font-weight:bold; font-size:16px">Tc</code>
-Технеций
-(98)
-</pre>
-            </td>
-            <td class="hard transMetal">
-<pre>
-44
-<code style="font-weight:bold; font-size:16px">Ru</code>
-Рутений
-101,07
-</pre>
-            </td>
-            <td class="hard transMetal">
-<pre>
-45
-<code style="font-weight:bold; font-size:16px">Rh</code>
-Родий
-102,91
-</pre>
-            </td>
-            <td class="hard transMetal">
-<pre>
-46
-<code style="font-weight:bold; font-size:16px">Pd</code>
-Палладий
-106,42
-</pre>
-            </td>
-            <td class="hard transMetal">
-<pre>
-47
-<code style="font-weight:bold; font-size:16px">Ag</code>
-Серебро
-107,87
-</pre>
-            </td>
-            <td class="hard transMetal">
-<pre>
-48
-<code style="font-weight:bold; font-size:16px">Cd</code>
-Кадмий
-112,41
-</pre>
-            </td>
-            <td class="hard postMetal">
-<pre>
-49
-<code style="font-weight:bold; font-size:16px">In</code>
-Индий
-114,82
-</pre>
-            </td>
-            <td class="hard postMetal">
-<pre>
-50
-<code style="font-weight:bold; font-size:16px">Sn</code>
-Олово
-118,71
-</pre>
-            </td>
-            <td class="hard semiMetal">
-<pre>
-51
-<code style="font-weight:bold; font-size:16px">Sb</code>
-Сурьма
-121,76
-</pre>
-            </td>
-            <td class="hard semiMetal">
-<pre>
-52
-<code style="font-weight:bold; font-size:16px">Te</code>
-Теллур
-127,60
-</pre>
-            </td>
-            <td class="hard nonMetal">
-<pre>
-53
-<code style="font-weight:bold; font-size:16px">I</code>
-Йод
-126,90
-</pre>
-            </td>
-            <td class="gas royalGas">
-<pre>
-54
-<code style="font-weight:bold; font-size:16px">Xe</code>
-Ксенон
-131,29
-</pre>
-            </td>
-        </tr>
+				<tr>
+					<td class="num" style="font-size:16px">3</td>
+					<td class="hard alkalMetal">
+	<pre>
+	11
+	<code style="font-weight:bold; font-size:16px">Na</code>
+	Натрий
+	22,99
+	</pre>
+					</td>
+					<td class="hard alkaEarthMetal">
+	<pre>
+	12
+	<code style="font-weight:bold; font-size:16px">Mg</code>
+	Магний
+	24,305
+	</pre>
+					</td>
+					<td class="unknown">Неизвестно</td>
+					<td></td>
+					<td class="hard postMetal">
+	<pre>
+	13
+	<code style="font-weight:bold; font-size:16px">Al</code>
+	Алюминий
+	26,982
+	</pre>
+					</td>
+					<td class="hard semiMetal">
+	<pre>
+	14
+	<code style="font-weight:bold; font-size:16px">Si</code>
+	Кремний
+	28,085
+	</pre>
+					</td>
+					<td class="hard nonMetal">
+	<pre>
+	15
+	<code style="font-weight:bold; font-size:16px">P</code>
+	Фосфор
+	30,974
+	</pre>
+					</td>
+					<td class="hard nonMetal">
+	<pre>
+	16
+	<code style="font-weight:bold; font-size:16px">S</code>
+	Сера
+	32,06
+	</pre>
+					</td>
+					<td class="gas nonMetal">
+	<pre>
+	17
+	<code style="font-weight:bold; font-size:16px">Cl</code>
+	Хлор
+	35,45
+	</pre>
+					</td>
+					<td class="gas royalGas">
+	<pre>
+	18
+	<code style="font-weight:bold; font-size:16px">Ar</code>
+	Аргон
+	39,948
+	</pre>
+					</td>
+				</tr>
+				<tr>
+					<td class="num" style="font-size:16px">4</td>
+					<td class="hard alkalMetal">
+	<pre>
+	19
+	<code style="font-weight:bold; font-size:16px">K</code>
+	Калий
+	39,098
+	</pre>
+					</td>
+					<td class="hard alkaEarthMetal">
+	<pre>
+	20
+	<code style="font-weight:bold; font-size:16px">Ca</code>
+	Кальций
+	40,078
+	</pre>
+					</td>
+					<td class="hard transMetal">
+	<pre>
+	21
+	<code style="font-weight:bold; font-size:16px">Sc</code>
+	Скандий
+	44,956
+	</pre>
+					</td>
+					<td class="hard transMetal">
+	<pre>
+	22
+	<code style="font-weight:bold; font-size:16px">Ti</code>
+	Титан
+	47,867
+	</pre>
+					</td>
+					<td class="hard transMetal">
+	<pre>
+	23
+	<code style="font-weight:bold; font-size:16px">V</code>
+	Ванадий
+	50,942
+	</pre>
+					</td>
+					<td class="hard transMetal">
+	<pre>
+	24
+	<code style="font-weight:bold; font-size:16px">Cr</code>
+	Хром
+	51,996
+	</pre>
+					</td>
+					<td class="hard transMetal">
+	<pre>
+	25
+	<code style="font-weight:bold; font-size:16px">Mg</code>
+	Марганец
+	54,938
+	</pre>
+					</td>
+					<td class="hard transMetal">
+	<pre>
+	26
+	<code style="font-weight:bold; font-size:16px">Fe</code>
+	Железо
+	55,845
+	</pre>
+					</td>
+					<td class="hard transMetal">
+	<pre>
+	27
+	<code style="font-weight:bold; font-size:16px">Co</code>
+	Кобальт
+	58,933
+	</pre>
+					</td>
+					<td class="hard transMetal">
+	<pre>
+	28
+	<code style="font-weight:bold; font-size:16px">Ni</code>
+	Никель
+	58,693
+	</pre>
+					</td>
+					<td class="hard transMetal">
+	<pre>
+	29
+	<code style="font-weight:bold; font-size:16px">Cu</code>
+	Медь
+	63,546
+	</pre>
+					</td>
+					<td class="hard transMetal">
+	<pre>
+	30
+	<code style="font-weight:bold; font-size:16px">Zn</code>
+	Цинк
+	65,38
+	</pre>
+					</td>
+					<td class="hard postMetal">
+	<pre>
+	31
+	<code style="font-weight:bold; font-size:16px">Ga</code>
+	Галлий
+	69,723
+	</pre>
+					</td>
+					<td class="hard semiMetal">
+	<pre>
+	32
+	<code style="font-weight:bold; font-size:16px">Ge</code>
+	Германий
+	72,630
+	</pre>
+					</td>
+					<td class="hard semiMetal">
+	<pre>
+	33
+	<code style="font-weight:bold; font-size:16px">As</code>
+	Мышьяк
+	74,922
+	</pre>
+					</td>
+					<td class="hard nonMetal">
+	<pre>
+	34
+	<code style="font-weight:bold; font-size:16px">Se</code>
+	Селен
+	78,971
+	</pre>
+					</td>
+					<td class="liquid nonMetal">
+	<pre>
+	35
+	<code style="font-weight:bold; font-size:16px">Br</code>
+	Бром
+	79,904
+	</pre>
+					</td>
+					<td class="gas royalGas">
+	<pre>
+	36
+	<code style="font-weight:bold; font-size:16px">Kr</code>
+	Криптон
+	83,798
+	</pre>
+					</td>
+				</tr>
+				<tr>
+					<td class="num" style="font-size:16px">5</td>
+					<td class="hard alkalMetal">
+	<pre>
+	37
+	<code style="font-weight:bold; font-size:16px">Rb</code>
+	Рубидий
+	85,468
+	</pre>
+					</td>
+					<td class="hard alkaEarthMetal">
+	<pre>
+	38
+	<code style="font-weight:bold; font-size:16px">Sr</code>
+	Стронций
+	87,62
+	</pre>
+					</td>
+					<td class="hard transMetal">
+	<pre>
+	39
+	<code style="font-weight:bold; font-size:16px">Y</code>
+	Иттрий
+	88,906
+	</pre>
+					</td>
+					<td class="hard transMetal">
+	<pre>
+	40
+	<code style="font-weight:bold; font-size:16px">Zr</code>
+	Цирконий
+	91,224
+	</pre>
+					</td>
+					<td class="hard transMetal">
+	<pre>
+	41
+	<code style="font-weight:bold; font-size:16px">Nb</code>
+	Ниобий
+	92,906
+	</pre>
+					</td>
+					<td class="hard transMetal">
+	<pre>
+	42
+	<code style="font-weight:bold; font-size:16px">Mo</code>
+	Молибден
+	95,95
+	</pre>
+					</td>
+					<td class="hard transMetal">
+	<pre>
+	43
+	<code style="font-weight:bold; font-size:16px">Tc</code>
+	Технеций
+	(98)
+	</pre>
+					</td>
+					<td class="hard transMetal">
+	<pre>
+	44
+	<code style="font-weight:bold; font-size:16px">Ru</code>
+	Рутений
+	101,07
+	</pre>
+					</td>
+					<td class="hard transMetal">
+	<pre>
+	45
+	<code style="font-weight:bold; font-size:16px">Rh</code>
+	Родий
+	102,91
+	</pre>
+					</td>
+					<td class="hard transMetal">
+	<pre>
+	46
+	<code style="font-weight:bold; font-size:16px">Pd</code>
+	Палладий
+	106,42
+	</pre>
+					</td>
+					<td class="hard transMetal">
+	<pre>
+	47
+	<code style="font-weight:bold; font-size:16px">Ag</code>
+	Серебро
+	107,87
+	</pre>
+					</td>
+					<td class="hard transMetal">
+	<pre>
+	48
+	<code style="font-weight:bold; font-size:16px">Cd</code>
+	Кадмий
+	112,41
+	</pre>
+					</td>
+					<td class="hard postMetal">
+	<pre>
+	49
+	<code style="font-weight:bold; font-size:16px">In</code>
+	Индий
+	114,82
+	</pre>
+					</td>
+					<td class="hard postMetal">
+	<pre>
+	50
+	<code style="font-weight:bold; font-size:16px">Sn</code>
+	Олово
+	118,71
+	</pre>
+					</td>
+					<td class="hard semiMetal">
+	<pre>
+	51
+	<code style="font-weight:bold; font-size:16px">Sb</code>
+	Сурьма
+	121,76
+	</pre>
+					</td>
+					<td class="hard semiMetal">
+	<pre>
+	52
+	<code style="font-weight:bold; font-size:16px">Te</code>
+	Теллур
+	127,60
+	</pre>
+					</td>
+					<td class="hard nonMetal">
+	<pre>
+	53
+	<code style="font-weight:bold; font-size:16px">I</code>
+	Йод
+	126,90
+	</pre>
+					</td>
+					<td class="gas royalGas">
+	<pre>
+	54
+	<code style="font-weight:bold; font-size:16px">Xe</code>
+	Ксенон
+	131,29
+	</pre>
+					</td>
+				</tr>
 
-        <tr>
-            <td class="num" style="font-size:16px">6</td>
-            <td class="hard alkalMetal">
-<pre>
-55
-<code style="font-weight:bold; font-size:16px">Cs</code>
-Цезий
-132,91
-</pre>
-            </td>
-            <td class="hard alkaEarthMetal">
-<pre>
-56
-<code style="font-weight:bold; font-size:16px">Ba</code>
-Барий
-137,33
-</pre>
-            </td>
+				<tr>
+					<td class="num" style="font-size:16px">6</td>
+					<td class="hard alkalMetal">
+	<pre>
+	55
+	<code style="font-weight:bold; font-size:16px">Cs</code>
+	Цезий
+	132,91
+	</pre>
+					</td>
+					<td class="hard alkaEarthMetal">
+	<pre>
+	56
+	<code style="font-weight:bold; font-size:16px">Ba</code>
+	Барий
+	137,33
+	</pre>
+					</td>
 
-            <td rowspan="5" style="background-color:blue">
-<pre>
-57-71
-
-
-
-
-
-89-103
+					<td rowspan="5" style="background-color:blue">
+	<pre>
+	57-71
 
 
 
 
 
-
-<code class="num" style="font-size:16px">6</code>
-
+	89-103
 
 
 
 
-<code class="num" style="font-size:16px">7</code>
+
+
+	<code class="num" style="font-size:16px">6</code>
 
 
 
-</pre>
-            </td>
 
-            <td class="hard transMetal">
-<pre>
-72
-<code style="font-weight:bold; font-size:16px">Hf</code>
-Гафний
-178,49
-</pre>
-            </td>
-            <td class="hard transMetal">
-<pre>
-73
-<code style="font-weight:bold; font-size:16px">Ta</code>
-Тантал
-180,95
-</pre>
-            </td>
-            <td class="hard transMetal">
-<pre>
-74
-<code style="font-weight:bold; font-size:16px">W</code>
-Вольфрам
-183,84
-</pre>
-            </td>
-            <td class="hard transMetal">
-<pre>
-75
-<code style="font-weight:bold; font-size:16px">Re</code>
-Рений
-186,21
-</pre>
-            </td>
-            <td class="hard transMetal">
-<pre>
-76
-<code style="font-weight:bold; font-size:16px">Os</code>
-Осмий
-190,23
-</pre>
-            </td>
-            <td class="hard transMetal">
-<pre>
-77
-<code style="font-weight:bold; font-size:16px">Ir</code>
-Иридий
-192,22
-</pre>
-            </td>
-            <td class="hard transMetal">
-<pre>
-78
-<code style="font-weight:bold; font-size:16px">Pt</code>
-Платина
-195,08
-</pre>
-            </td>
-            <td class="hard transMetal">
-<pre>
-79
-<code style="font-weight:bold; font-size:16px">Au</code>
-Золото
-196,97
-</pre>
-            </td>
-            <td class="liquid transMetal">
-<pre>
-80
-<code style="font-weight:bold; font-size:16px">Hg</code>
-Ртуть
-200,59
-</pre>
-            </td>
-            <td class="hard postMetal">
-<pre>
-81
-<code style="font-weight:bold; font-size:16px">Tl</code>
-Таллий
-204,38
-</pre>
-            </td>
-            <td class="hard postMetal">
-                <pre>
-82
-<code style="font-weight:bold; font-size:16px">Pb</code>
-Свинец
-207,2
-</pre>
-            </td>
-            <td class="hard postMetal">
-<pre>
-83
-<code style="font-weight:bold; font-size:16px">Bi</code>
-Висмут
-208,98
-</pre>
-            </td>
-            <td class="hard postMetal">
-<pre>
-84
-<code style="font-weight:bold; font-size:16px">Po</code>
-Полоний
-(209)
-</pre>
-            </td>
-            <td class="hard nonMetal">
-<pre>
-85
-<code style="font-weight:bold; font-size:16px">At</code>
-Астат
-(210)
-</pre>
-            </td>
-            <td class="gas royalGas">
-<pre>
-86
-<code style="font-weight:bold; font-size:16px">Rn</code>
-Раддон
-(222)
-</pre>
-            </td>
-        </tr>
 
-        <tr>
-            <td class="num" style="font-size:16px">7</td>
-            <td class="hard alkalMetal">
-<pre>
-87
-<code style="font-weight:bold; font-size:16px">Fr</code>
-Франций
-(223)
-</pre>
-            </td>
-            <td class="hard alkaEarthMetal">
-<pre>
-88
-<code style="font-weight:bold; font-size:16px">Ra</code>
-Радий
-(226)
-</pre>
-            </td>
-            <td class="unknown transMetal">
-<pre>
-104
-<code style="font-weight:bold; font-size:16px">Rf</code>
-Резерфордий
-(267)
-</pre>
-            </td>
-            <td class="unknown transMetal">
-<pre>
-105
-<code style="font-weight:bold; font-size:16px">Db</code>
-Дубний
-(268)
-</pre>
-            </td>
-            <td class="unknown transMetal">
-<pre>
-106
-<code style="font-weight:bold; font-size:16px">Sg</code>
-Сиборгий
-(269)
-</pre>
-            </td>
-            <td class="unknown transMetal">
-<pre>
-107
-<code style="font-weight:bold; font-size:16px">Bh</code>
-Борий
-(270)
-</pre>
-            </td>
-            <td class="unknown transMetal">
-<pre>
-108
-<code style="font-weight:bold; font-size:16px">Hs</code>
-Хассий
-(277)
-</pre>
-            </td>
-            <td class="unknown">
-<pre>
-109
-<code style="font-weight:bold; font-size:16px">Mt</code>
-Мейтнерий
-(278)
-</pre>
-            </td>
-            <td class="unknown">
-<pre>
-110
-<code style="font-weight:bold; font-size:16px">Ds</code>
-Дармштадий
-(281)
-</pre>
-            </td>
-            <td class="unknown">
-<pre>
-111
-<code style="font-weight:bold; font-size:16px">Rg</code>
-Рентгений
-(282)
-</pre>
-            </td>
-            <td class="unknown">
-<pre>
-112
-<code style="font-weight:bold; font-size:16px">Cn</code>
-Коперниций
-(285)
-</pre>
-            </td>
-            <td class="unknown">
-<pre>
-113
-<code style="font-weight:bold; font-size:16px">Nh</code>
-Нихоний
-(286)
-</pre>
-            </td>
-            <td class="unknown">
-<pre>
-114
-<code style="font-weight:bold; font-size:16px">Fl</code>
-Флероний
-(289)
-</pre>
-            </td>
-            <td class="unknown">
-<pre>
-115
-<code style="font-weight:bold; font-size:16px">Mc</code>
-Московий
-(290)
-</pre>
-            </td>
-            <td class="unknown">
-<pre>
-116
-<code style="font-weight:bold; font-size:16px">Lv</code>
-Ливермоний
-(293)
-</pre>
-            </td>
-            <td class="unknown">
-<pre>
-117
-<code style="font-weight:bold; font-size:16px">Ts</code>
-Теннессин
-(294)
-</pre>
-            </td>
-            <td class="unknown">
-<pre>
-118
-<code style="font-weight:bold; font-size:16px">Og</code>
-Оганесон
-(294)
-</pre>
-            </td>
-        </tr>
+	<code class="num" style="font-size:16px">7</code>
 
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td class="num" style="color:white" colspan="15">Для элементов, не имеющих стабильных изотопов, в скобках указывается масса изотопа с наибольшим периодом полураспада.</td>
-        </tr>
 
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td class="hard lantanid">
-<pre>
-57
-<code style="font-weight:bold; font-size:16px">La</code>
-Лантан
-138,91
-</pre>
-            </td>
-            <td class="hard lantanid">
-<pre>
-58
-<code style="font-weight:bold; font-size:16px">Ce</code>
-Церий
-140,12
-</pre>
-            </td>
-            <td class="hard lantanid">
-<pre>
-59
-<code style="font-weight:bold; font-size:16px">Pr</code>
-Празеодим
-140,91
-</pre>
-            </td>
-            <td class="hard lantanid">
-<pre>
-60
-<code style="font-weight:bold; font-size:16px">Nd</code>
-Неодим
-144,24
-</pre>
-            </td>
-            <td class="hard lantanid">
-<pre>
-61
-<code style="font-weight:bold; font-size:16px">Pm</code>
-Прометий
-(145)
-</pre>
-            </td>
-            <td class="hard lantanid">
-<pre>
-62
-<code style="font-weight:bold; font-size:16px">Sm</code>
-Самарий
-150,36
-</pre>
-            </td>
-            <td class="hard lantanid">
-<pre>
-63
-<code style="font-weight:bold; font-size:16px">Eu</code>
-Европий
-151,96
-</pre>
-            </td>
-            <td class="hard lantanid">
-<pre>
-64
-<code style="font-weight:bold; font-size:16px">Gd</code>
-Гадолиний
-157,25
-</pre>
-            </td>
-            <td class="hard lantanid">
-<pre>
-65
-<code style="font-weight:bold; font-size:16px">Tb</code>
-Тербий
-158,93
-</pre>
-            </td>
-            <td class="hard lantanid">
-<pre>
-66
-<code style="font-weight:bold; font-size:16px">Dy</code>
-Диспрозий
-162,50
-</pre>
-            </td>
-            <td class="hard lantanid">
-<pre>
-67
-<code style="font-weight:bold; font-size:16px">Ho</code>
-Гольмий
-164,93
-</pre>
-            </td>
-            <td class="hard lantanid">
-<pre>
-68
-<code style="font-weight:bold; font-size:16px">Er</code>
-Эрбий
-167,26
-</pre>
-            </td>
-            <td class="hard lantanid">
-<pre>
-69
-<code style="font-weight:bold; font-size:16px">Tm</code>
-Тулий
-168,93
-</pre>
-            </td>
-            <td class="hard lantanid">
-<pre>
-70
-<code style="font-weight:bold; font-size:16px">Yb</code>
-Иттербий
-173,05
-</pre>
-            </td>
-            <td class="hard lantanid">
-<pre>
-71
-<code style="font-weight:bold; font-size:16px">Lu</code>
-Лютеций
-174,97
-</pre>
-            </td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td class="hard aktinoid">
-<pre>
-89
-<code style="font-weight:bold; font-size:16px">Ac</code>
-Актиний
-(227)
-</pre>
-            </td>
-            <td class="hard aktinoid">
-<pre>
-90
-<code style="font-weight:bold; font-size:16px">Th</code>
-Торий
-232,04
-</pre>
-            </td>
-            <td class="hard aktinoid">
-<pre>
-91
-<code style="font-weight:bold; font-size:16px">Pa</code>
-Протактиний
-231,04
-</pre>
-            </td>
-            <td class="hard aktinoid">
-<pre>
-92
-<code style="font-weight:bold; font-size:16px">U</code>
-Уран
-238,03
-</pre>
-            </td>
-            <td class="hard aktinoid">
-<pre>
-93
-<code style="font-weight:bold; font-size:16px">Np</code>
-Нептуний
-(237)
-</pre>
-            </td>
-            <td class="hard aktinoid">
-<pre>
-94
-<code style="font-weight:bold; font-size:16px">Pu</code>
-Плутоний
-(244)
-</pre>
-            </td>
-            <td class="hard aktinoid">
-<pre>
-95
-<code style="font-weight:bold; font-size:16px">Am</code>
-Америций
-(243)
-</pre>
-            </td>
-            <td class="hard aktinoid">
-<pre>
-96
-<code style="font-weight:bold; font-size:16px">Cm</code>
-Кюрий
-(247)
-</pre>
-            </td>
-            <td class="hard aktinoid">
-<pre>
-97
-<code style="font-weight:bold; font-size:16px">Bk</code>
-Берклий
-(247)
-</pre>
-            </td>
-            <td class="hard aktinoid">
-<pre>
-98
-<code style="font-weight:bold; font-size:16px">Cf</code>
-Калифорний
-(251)
-</pre>
-            </td>
-            <td class="hard aktinoid">
-                <pre>
-99
-<code style="font-weight:bold; font-size:16px">Es</code>
-Энштейний
-(252)
-</pre>
-            </td>
-            <td class="hard aktinoid">
-<pre>
-100
-<code style="font-weight:bold; font-size:16px">Fm</code>
-Фермий
-(257)
-</pre>
-            </td>
-            <td class="hard aktinoid">
-                <pre>
-101
-<code style="font-weight:bold; font-size:16px">Md</code>
-Менделевий
-(258)
-</pre>
-            </td>
-            <td class="hard aktinoid">
-<pre>
-102
-<code style="font-weight:bold; font-size:16px">No</code>
-Нобелий
-(259)
-</pre>
-            </td>
-            <td class="hard aktinoid">
-<pre>
-103
-<code style="font-weight:bold; font-size:16px">Lr</code>
-Лоуренций
-(266)
-</pre>
-            </td>
-        </tr>
-    </table>
+
+	</pre>
+					</td>
+
+					<td class="hard transMetal">
+	<pre>
+	72
+	<code style="font-weight:bold; font-size:16px">Hf</code>
+	Гафний
+	178,49
+	</pre>
+					</td>
+					<td class="hard transMetal">
+	<pre>
+	73
+	<code style="font-weight:bold; font-size:16px">Ta</code>
+	Тантал
+	180,95
+	</pre>
+					</td>
+					<td class="hard transMetal">
+	<pre>
+	74
+	<code style="font-weight:bold; font-size:16px">W</code>
+	Вольфрам
+	183,84
+	</pre>
+					</td>
+					<td class="hard transMetal">
+	<pre>
+	75
+	<code style="font-weight:bold; font-size:16px">Re</code>
+	Рений
+	186,21
+	</pre>
+					</td>
+					<td class="hard transMetal">
+	<pre>
+	76
+	<code style="font-weight:bold; font-size:16px">Os</code>
+	Осмий
+	190,23
+	</pre>
+					</td>
+					<td class="hard transMetal">
+	<pre>
+	77
+	<code style="font-weight:bold; font-size:16px">Ir</code>
+	Иридий
+	192,22
+	</pre>
+					</td>
+					<td class="hard transMetal">
+	<pre>
+	78
+	<code style="font-weight:bold; font-size:16px">Pt</code>
+	Платина
+	195,08
+	</pre>
+					</td>
+					<td class="hard transMetal">
+	<pre>
+	79
+	<code style="font-weight:bold; font-size:16px">Au</code>
+	Золото
+	196,97
+	</pre>
+					</td>
+					<td class="liquid transMetal">
+	<pre>
+	80
+	<code style="font-weight:bold; font-size:16px">Hg</code>
+	Ртуть
+	200,59
+	</pre>
+					</td>
+					<td class="hard postMetal">
+	<pre>
+	81
+	<code style="font-weight:bold; font-size:16px">Tl</code>
+	Таллий
+	204,38
+	</pre>
+					</td>
+					<td class="hard postMetal">
+						<pre>
+	82
+	<code style="font-weight:bold; font-size:16px">Pb</code>
+	Свинец
+	207,2
+	</pre>
+					</td>
+					<td class="hard postMetal">
+	<pre>
+	83
+	<code style="font-weight:bold; font-size:16px">Bi</code>
+	Висмут
+	208,98
+	</pre>
+					</td>
+					<td class="hard postMetal">
+	<pre>
+	84
+	<code style="font-weight:bold; font-size:16px">Po</code>
+	Полоний
+	(209)
+	</pre>
+					</td>
+					<td class="hard nonMetal">
+	<pre>
+	85
+	<code style="font-weight:bold; font-size:16px">At</code>
+	Астат
+	(210)
+	</pre>
+					</td>
+					<td class="gas royalGas">
+	<pre>
+	86
+	<code style="font-weight:bold; font-size:16px">Rn</code>
+	Раддон
+	(222)
+	</pre>
+					</td>
+				</tr>
+
+				<tr>
+					<td class="num" style="font-size:16px">7</td>
+					<td class="hard alkalMetal">
+	<pre>
+	87
+	<code style="font-weight:bold; font-size:16px">Fr</code>
+	Франций
+	(223)
+	</pre>
+					</td>
+					<td class="hard alkaEarthMetal">
+	<pre>
+	88
+	<code style="font-weight:bold; font-size:16px">Ra</code>
+	Радий
+	(226)
+	</pre>
+					</td>
+					<td class="unknown transMetal">
+	<pre>
+	104
+	<code style="font-weight:bold; font-size:16px">Rf</code>
+	Резерфордий
+	(267)
+	</pre>
+					</td>
+					<td class="unknown transMetal">
+	<pre>
+	105
+	<code style="font-weight:bold; font-size:16px">Db</code>
+	Дубний
+	(268)
+	</pre>
+					</td>
+					<td class="unknown transMetal">
+	<pre>
+	106
+	<code style="font-weight:bold; font-size:16px">Sg</code>
+	Сиборгий
+	(269)
+	</pre>
+					</td>
+					<td class="unknown transMetal">
+	<pre>
+	107
+	<code style="font-weight:bold; font-size:16px">Bh</code>
+	Борий
+	(270)
+	</pre>
+					</td>
+					<td class="unknown transMetal">
+	<pre>
+	108
+	<code style="font-weight:bold; font-size:16px">Hs</code>
+	Хассий
+	(277)
+	</pre>
+					</td>
+					<td class="unknown">
+	<pre>
+	109
+	<code style="font-weight:bold; font-size:16px">Mt</code>
+	Мейтнерий
+	(278)
+	</pre>
+					</td>
+					<td class="unknown">
+	<pre>
+	110
+	<code style="font-weight:bold; font-size:16px">Ds</code>
+	Дармштадий
+	(281)
+	</pre>
+					</td>
+					<td class="unknown">
+	<pre>
+	111
+	<code style="font-weight:bold; font-size:16px">Rg</code>
+	Рентгений
+	(282)
+	</pre>
+					</td>
+					<td class="unknown">
+	<pre>
+	112
+	<code style="font-weight:bold; font-size:16px">Cn</code>
+	Коперниций
+	(285)
+	</pre>
+					</td>
+					<td class="unknown">
+	<pre>
+	113
+	<code style="font-weight:bold; font-size:16px">Nh</code>
+	Нихоний
+	(286)
+	</pre>
+					</td>
+					<td class="unknown">
+	<pre>
+	114
+	<code style="font-weight:bold; font-size:16px">Fl</code>
+	Флероний
+	(289)
+	</pre>
+					</td>
+					<td class="unknown">
+	<pre>
+	115
+	<code style="font-weight:bold; font-size:16px">Mc</code>
+	Московий
+	(290)
+	</pre>
+					</td>
+					<td class="unknown">
+	<pre>
+	116
+	<code style="font-weight:bold; font-size:16px">Lv</code>
+	Ливермоний
+	(293)
+	</pre>
+					</td>
+					<td class="unknown">
+	<pre>
+	117
+	<code style="font-weight:bold; font-size:16px">Ts</code>
+	Теннессин
+	(294)
+	</pre>
+					</td>
+					<td class="unknown">
+	<pre>
+	118
+	<code style="font-weight:bold; font-size:16px">Og</code>
+	Оганесон
+	(294)
+	</pre>
+					</td>
+				</tr>
+
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td class="num" style="color:white" colspan="15">Для элементов, не имеющих стабильных изотопов, в скобках указывается масса изотопа с наибольшим периодом полураспада.</td>
+				</tr>
+
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td class="hard lantanid">
+	<pre>
+	57
+	<code style="font-weight:bold; font-size:16px">La</code>
+	Лантан
+	138,91
+	</pre>
+					</td>
+					<td class="hard lantanid">
+	<pre>
+	58
+	<code style="font-weight:bold; font-size:16px">Ce</code>
+	Церий
+	140,12
+	</pre>
+					</td>
+					<td class="hard lantanid">
+	<pre>
+	59
+	<code style="font-weight:bold; font-size:16px">Pr</code>
+	Празеодим
+	140,91
+	</pre>
+					</td>
+					<td class="hard lantanid">
+	<pre>
+	60
+	<code style="font-weight:bold; font-size:16px">Nd</code>
+	Неодим
+	144,24
+	</pre>
+					</td>
+					<td class="hard lantanid">
+	<pre>
+	61
+	<code style="font-weight:bold; font-size:16px">Pm</code>
+	Прометий
+	(145)
+	</pre>
+					</td>
+					<td class="hard lantanid">
+	<pre>
+	62
+	<code style="font-weight:bold; font-size:16px">Sm</code>
+	Самарий
+	150,36
+	</pre>
+					</td>
+					<td class="hard lantanid">
+	<pre>
+	63
+	<code style="font-weight:bold; font-size:16px">Eu</code>
+	Европий
+	151,96
+	</pre>
+					</td>
+					<td class="hard lantanid">
+	<pre>
+	64
+	<code style="font-weight:bold; font-size:16px">Gd</code>
+	Гадолиний
+	157,25
+	</pre>
+					</td>
+					<td class="hard lantanid">
+	<pre>
+	65
+	<code style="font-weight:bold; font-size:16px">Tb</code>
+	Тербий
+	158,93
+	</pre>
+					</td>
+					<td class="hard lantanid">
+	<pre>
+	66
+	<code style="font-weight:bold; font-size:16px">Dy</code>
+	Диспрозий
+	162,50
+	</pre>
+					</td>
+					<td class="hard lantanid">
+	<pre>
+	67
+	<code style="font-weight:bold; font-size:16px">Ho</code>
+	Гольмий
+	164,93
+	</pre>
+					</td>
+					<td class="hard lantanid">
+	<pre>
+	68
+	<code style="font-weight:bold; font-size:16px">Er</code>
+	Эрбий
+	167,26
+	</pre>
+					</td>
+					<td class="hard lantanid">
+	<pre>
+	69
+	<code style="font-weight:bold; font-size:16px">Tm</code>
+	Тулий
+	168,93
+	</pre>
+					</td>
+					<td class="hard lantanid">
+	<pre>
+	70
+	<code style="font-weight:bold; font-size:16px">Yb</code>
+	Иттербий
+	173,05
+	</pre>
+					</td>
+					<td class="hard lantanid">
+	<pre>
+	71
+	<code style="font-weight:bold; font-size:16px">Lu</code>
+	Лютеций
+	174,97
+	</pre>
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td class="hard aktinoid">
+	<pre>
+	89
+	<code style="font-weight:bold; font-size:16px">Ac</code>
+	Актиний
+	(227)
+	</pre>
+					</td>
+					<td class="hard aktinoid">
+	<pre>
+	90
+	<code style="font-weight:bold; font-size:16px">Th</code>
+	Торий
+	232,04
+	</pre>
+					</td>
+					<td class="hard aktinoid">
+	<pre>
+	91
+	<code style="font-weight:bold; font-size:16px">Pa</code>
+	Протактиний
+	231,04
+	</pre>
+					</td>
+					<td class="hard aktinoid">
+	<pre>
+	92
+	<code style="font-weight:bold; font-size:16px">U</code>
+	Уран
+	238,03
+	</pre>
+					</td>
+					<td class="hard aktinoid">
+	<pre>
+	93
+	<code style="font-weight:bold; font-size:16px">Np</code>
+	Нептуний
+	(237)
+	</pre>
+					</td>
+					<td class="hard aktinoid">
+	<pre>
+	94
+	<code style="font-weight:bold; font-size:16px">Pu</code>
+	Плутоний
+	(244)
+	</pre>
+					</td>
+					<td class="hard aktinoid">
+	<pre>
+	95
+	<code style="font-weight:bold; font-size:16px">Am</code>
+	Америций
+	(243)
+	</pre>
+					</td>
+					<td class="hard aktinoid">
+	<pre>
+	96
+	<code style="font-weight:bold; font-size:16px">Cm</code>
+	Кюрий
+	(247)
+	</pre>
+					</td>
+					<td class="hard aktinoid">
+	<pre>
+	97
+	<code style="font-weight:bold; font-size:16px">Bk</code>
+	Берклий
+	(247)
+	</pre>
+					</td>
+					<td class="hard aktinoid">
+	<pre>
+	98
+	<code style="font-weight:bold; font-size:16px">Cf</code>
+	Калифорний
+	(251)
+	</pre>
+					</td>
+					<td class="hard aktinoid">
+						<pre>
+	99
+	<code style="font-weight:bold; font-size:16px">Es</code>
+	Энштейний
+	(252)
+	</pre>
+					</td>
+					<td class="hard aktinoid">
+	<pre>
+	100
+	<code style="font-weight:bold; font-size:16px">Fm</code>
+	Фермий
+	(257)
+	</pre>
+					</td>
+					<td class="hard aktinoid">
+						<pre>
+	101
+	<code style="font-weight:bold; font-size:16px">Md</code>
+	Менделевий
+	(258)
+	</pre>
+					</td>
+					<td class="hard aktinoid">
+	<pre>
+	102
+	<code style="font-weight:bold; font-size:16px">No</code>
+	Нобелий
+	(259)
+	</pre>
+					</td>
+					<td class="hard aktinoid">
+	<pre>
+	103
+	<code style="font-weight:bold; font-size:16px">Lr</code>
+	Лоуренций
+	(266)
+	</pre>
+					</td>
+				</tr>
+			</table>
+		</div>-->
+	<div>
+		<div class="solid s" id="trigSolid">Твердое тело</div>
+		<div class="liq s" id="trigLiq">Жидкость</div>
+		<div class="gas s" id="trigGas">Газ</div>
+		<div class="unk s" id="trigUnknown">Неизвестно</div>
+		<div class="ns"></div>
+
+		<div class="gas s">1<p style="font-weight:bolder">H</p>Водород<br>1,008</div>
+		<div class="s"></div>
+		<div class="s"></div>
+		<div class="s"></div>
+		<div class="s"></div>
+		<div class="s"></div>
+		<div class="s"></div>
+		<div class="s"></div>
+		<div class="s"></div>
+		<div class="s"></div>
+		<div class="s"></div>
+		<div class="s"></div>
+		<div class="s"></div>
+		<div class="s"></div>
+		<div class="s"></div>
+		<div class="s"></div>
+		<div class="s"></div>
+		<div class="gas s">2<br>He<br>Гелий<br>4,026</div>
+		<div class="ns"></div>
+
+		<div class="solid s">3<br>Li<br>Литий<br>6,94</div>
+		<div class="solid s">4<br>Be<br>Бериллий<br>9,0122</div>
+		<div class="s"></div>
+		<div class="s"></div>
+		<div class="s"></div>
+		<div class="s"></div>
+		<div class="s"></div>
+		<div class="s"></div>
+		<div class="s"></div>
+		<div class="s"></div>
+		<div class="s"></div>
+		<div class="s"></div>
+		<div class="solid s">5<br>B<br>Бор<br>10,81</div>
+		<div class="solid s">6<br>C<br>Углерод<br>12,011</div>
+		<div class="gas s">7<br>N<br>Азот<br>14,007</div>
+		<div class="gas s">8<br>O<br>Кислород<br>15,999</div>
+		<div class="gas s">9<br>F<br>Фтор<br>18,998</div>
+		<div class="gas s">10<br>Ne<br>Неон<br>20,18</div>
+		<div class="ns"></div>
+
+		<div class="solid s">11<br>Na<br>Натрий<br>22,990</div>
+		<div class="solid s">12<br>Ma<br>Магний<br>24,305</div>
+		<div class="s"></div>
+		<div class="s"></div>
+		<div class="s"></div>
+		<div class="s"></div>
+		<div class="s"></div>
+		<div class="s"></div>
+		<div class="s"></div>
+		<div class="s"></div>
+		<div class="s"></div>
+		<div class="s"></div>
+		<div class="solid s">13<br>Al<br>Алюминий<br>26,982</div>
+		<div class="solid s">14<br>Si<br>Кремний<br>28,085</div>
+		<div class="solid s">15<br>P<br>Фосфор<br>30,974</div>
+		<div class="solid s">16<br>S<br>Сера<br>32,06</div>
+		<div class="gas s">17<br>Cl<br>Хлор<br>35,45</div>
+		<div class="gas s">18<br>Ar<br>Аргон<br>39,948</div>
+		<div class="ns"></div>
+
+		<div class="solid s">19<br>K<br>Калий<br>39,098</div>
+		<div class="solid s">20<br>Ca<br>Кальций<br>40,078</div>
+		<div class="solid s">21<br>Sc<br>Скандий<br>44,956</div>
+		<div class="solid s">22<br>Ti<br>Титан<br>47,867</div>
+		<div class="solid s">23<br>V<br>Ванадий<br>50,942</div>
+		<div class="solid s">24<br>Cr<br>Хром<br>51,996</div>
+		<div class="solid s">25<br>Mg<br>Марганец<br>54,938</div>
+		<div class="solid s">26<br>Fe<br>Железо<br>55,845</div>
+		<div class="solid s">27<br>Co<br>Кобальт<br>58,933</div>
+		<div class="solid s">28<br>Ni<br>Никель<br>58,693</div>
+		<div class="solid s">29<br>Cu<br>Медь<br>63,546</div>
+		<div class="solid s">30<br>Zn<br>Цинк<br>65,38</div>
+		<div class="solid s">31<br>Ga<br>Галлий<br>69,723</div>
+		<div class="solid s">32<br>Ge<br>Германий<br>72,630</div>
+		<div class="solid s">33<br>As<br>Мышьяк<br>74,922</div>
+		<div class="solid s">34<br>Se<br>Селен<br>78,971</div>
+		<div class="liq s">35<br>Br<br>Бром<br>79,904</div>
+		<div class="gas s">36<br>Kr<br>Криптон<br>83,798</div>
+		<div class="ns"></div>
+
+	</div>
 </body>
 </html>

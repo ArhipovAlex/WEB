@@ -1,5 +1,6 @@
 ﻿body
 {
+    background-color:rgb(50,50,50);
 }
 table
 {
@@ -29,7 +30,17 @@ td.num
 td.hard
 {
     color:silver;
+    position:relative;
 }
+
+    td.hard:hover {
+        color: yellow;
+    }
+
+#hardMaterial:hover ~ td.hard:hover{
+    border: 5px solid yellow;
+}
+
 td.liquid
 {
     color:aqua;
@@ -77,4 +88,57 @@ td.postMetal
 td.semiMetal
 {
     background-color:teal;
+}
+
+
+/************************************************/
+.s
+{
+    width: 3.2%;
+    height: 70px;
+    background: rgb(75, 75, 75);
+    float: left;
+    margin: 0 15px 15px 0;
+    padding: 10px;
+    font-family:Arial;
+    
+    font-size:10px;
+}
+.ns {
+    width: 100%;
+    height: 90px;
+    margin: 0 15px 15px 0;
+}
+
+.solid{
+    color:magenta;
+}
+#trigSolid:hover ~ .solid
+{
+    color:black;
+    background-color:silver;
+}
+
+.liq{
+    color:aqua;
+}
+#trigLiq:hover ~ .liq {
+    color: black;
+    background-color: silver;
+}
+
+.gas{
+    color:red;
+}
+#trigGas:hover ~ .gas {
+    color: black;
+    background-color: silver;
+}
+
+.unk{
+    color:yellowgreen;
+}
+#trigUnknown:hover ~ .unk {
+    color: black;
+    background-color: silver;
 }
