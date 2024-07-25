@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <title>Регистрация</title>
+</head>
+<body>
+    <form action="#file.php" method="get">
+		<p><input type="text" placeholder="Введите логин" name="login" id="login" size="32" maxlength="25"></p>
+		<p><input type="password" placeholder="Введите пароль" name="password" id="password" size="32" maxlength="20"></p>
+        <p>Дата рождения:<br><input type="date"></p>
+		<p><input type="tel" placeholder="+7(XXX)-XXX-XX-XX" name="phone" id="phone" pattern="+7([0-9]{3})-[0-9]{3}-[0-9]{2}-[0-9]{2}"></p>
+        <p><input type="email" placeholder="E-mail" name="email" id="email"></p>
+		<p><textarea placeholder="Пару слов о себе" maxlength="150"></textarea></p>
+		<h3>Загрузите фото</h3>
+		<p><input type="file"></p>
+		<p>Ваш любимый цвет <input type="color" name="color"><br>
+		Когда вы хотите каникулы<input type="week" name="week"><br>
+		Куда вы хотите поехать на каникулы<input type="search" name="search"><br>
+		На сколько вы довольны обучением<input type="range" name="happines">
+		</p>
+        <h3>Какие языки вы знаете</h3>
+		<fieldset style="width:200px">
+			<legend>Какие языки вы знаете</legend>
+			<p>
+				<input type="checkbox" id="Russian" name="Russian" checked><label for="Russian">Русский</label> <br>
+				<input type="checkbox" id="English" name="English"><label for="English">English</label> <br>
+				<input type="checkbox" id="Deutsch" name="Deutsch"><label for="Deutsch">Deutsch</label> <br>
+				<input type="checkbox" id="Italiano" name="Italiano"><label for="Italiano">Italiano</label><br>
+				<input type="checkbox" id="Espaniol" name="Espaniol"><label for="Espaniol">Espaniol</label><br>
+			</p>
+		</fieldset>
+		<fieldset>
+			<legend>Выберите форму обучения</legend>
+			<input type="radio" name="learningform" id="station"><label for="station">Стационар</label>
+			<input type="radio" name="learningform" id="semistation"><label for="semistation">Полустационар</label>
+			<input type="radio" name="learningform" id="yearstation"><label for="yearstation">Годичные курсы</label>
+		</fieldset>
+		<p>
+			<select>
+				<option disabled selected>Выберите форму обучения</option>
+				<option>РПО</option>
+				<option>Сети</option>
+				<option>Дизайн</option>
+			</select>
+		</p>
+		<p>
+			<select size="8">
+				<option disabled selected>Выберите дни недели</option>
+				<option>Понедельник</option>
+				<option>Вторник</option>
+				<option>Среда</option>
+				<option>Четверг</option>
+				<option>Пятница</option>
+				<option>Суббота</option>
+				<option>Воскресенье</option>
+			</select>
+		</p>
+        <p><input type="reset" value="Сброс"><input type="submit" value="Отправить"></p>
+    </form>
+</body>
+</html>
