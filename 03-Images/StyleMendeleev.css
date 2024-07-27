@@ -93,7 +93,7 @@ td.semiMetal
 
 
 /************************************************/
-.s, .us, .six, .two
+.s, .us
 {
     width: 3.2%;
     height: 70px;
@@ -105,12 +105,7 @@ td.semiMetal
     
     font-size:12px;
 }
-.six{
-    width:26%;
-}
-.two{
-    width:7.9%;
-}
+
 .null {
     width: 3.2%;
     height: 70px;
