@@ -1,0 +1,18 @@
+﻿body
+{
+}
+.parent{
+    /*position:relative;*/
+    background-color:yellow;
+}
+.logo{
+    /*position:absolute;*/
+    border:solid 3px;
+    float:left;
+    left:300px;
+    top:100px;
+}
+.header{
+    position:sticky;
+    top:10px;
+}

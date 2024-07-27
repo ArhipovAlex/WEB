@@ -1,0 +1,42 @@
+﻿.main_window {
+    position: absolute;
+    background-color: silver;
+    left: 200px;
+    top: 100px;
+    width: 400px;
+    height: 300px;
+    border: solid 1px blue;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.title_bar {
+    position: absolute;
+    width: 400px;
+    height: 28px;
+    background-color: blue;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+
+    font-family:Tahoma;
+    color:white;
+}
+.title_bar_left_side, .title_bar_right_side{
+    display:flex;
+    align-items:center;
+    height:28px;
+}
+#app_icon{
+    width:24px;
+    height:24px;
+}
+.control_button{
+    width:22px;
+    height:22px;
+    margin:2px;
+}
+#close_button{
+    margin-right:3px;
+}
