@@ -93,7 +93,7 @@ td.semiMetal
 
 
 /************************************************/
-.s
+.s, .us, .six, .two
 {
     width: 3.2%;
     height: 70px;
@@ -103,7 +103,13 @@ td.semiMetal
     padding: 10px;
     font-family:Arial;
     
-    font-size:10px;
+    font-size:12px;
+}
+.six{
+    width:26%;
+}
+.two{
+    width:7.9%;
 }
 .null {
     width: 3.2%;
@@ -119,6 +125,9 @@ td.semiMetal
     width: 100%;
     height: 90px;
     margin: 0 15px 15px 0;
+    font-family: Arial;
+    font-size: 20px;
+    text-align: center;
 }
 .control {
     writing-mode: vertical-rl;
@@ -161,7 +170,7 @@ td.semiMetal
     background-color: silver;
 }
 
-.alkalMetal{
+.alkalMetal,.alkalMetalCon{
     background-color:rgb(120, 50, 0);
 }
 #trigAlkalMetal:hover ~ .alkalEarthMetal{background-color:rgb(50,50,50);color:rgb(50,50,50);}
@@ -172,139 +181,110 @@ td.semiMetal
 #trigAlkalMetal:hover ~ .semiMetal{background-color: rgb(50,50,50);color: rgb(50,50,50);}
 #trigAlkalMetal:hover ~ .nonMetal{background-color: rgb(50,50,50);color: rgb(50,50,50);}
 #trigAlkalMetal:hover ~ .royalGas {background-color: rgb(50,50,50);color: rgb(50,50,50);}
+#trigAlkalMetal:hover ~ .us {background-color: rgb(50,50,50);color: rgb(50,50,50);}
 
-.alkalEarthMetal{
+.alkalEarthMetal,.alkalEarthMetalCon{
     background-color:darkolivegreen;
 
 }
-#trigAlkalEarthMetal:hover ~ .alkalMetal {
-    background-color: rgb(50,50,50);
-    color: rgb(50,50,50);
-}
+#trigAlkalEarthMetal:hover ~ .alkalMetal {background-color: rgb(50,50,50);color: rgb(50,50,50);}
+#trigAlkalEarthMetal:hover ~ .transMetal {background-color: rgb(50,50,50);color: rgb(50,50,50);}
+#trigAlkalEarthMetal:hover ~ .postMetal {background-color: rgb(50,50,50);color: rgb(50,50,50);}
+#trigAlkalEarthMetal:hover ~ .lantanoid {background-color: rgb(50,50,50);color: rgb(50,50,50);}
+#trigAlkalEarthMetal:hover ~ .aktinoid {background-color: rgb(50,50,50);color: rgb(50,50,50);}
+#trigAlkalEarthMetal:hover ~ .semiMetal {background-color: rgb(50,50,50);color: rgb(50,50,50);}
+#trigAlkalEarthMetal:hover ~ .nonMetal {background-color: rgb(50,50,50);color: rgb(50,50,50);}
+#trigAlkalEarthMetal:hover ~ .royalGas {background-color: rgb(50,50,50);color: rgb(50,50,50);}
+#trigAlkalEarthMetal:hover ~ .us {background-color: rgb(50,50,50);color: rgb(50,50,50);}
 
-#trigAlkalEarthMetal:hover ~ .transMetal {
-    background-color: rgb(50,50,50);
-    color: rgb(50,50,50);
-}
-
-#trigAlkalEarthMetal:hover ~ .postMetal {
-    background-color: rgb(50,50,50);
-    color: rgb(50,50,50);
-}
-
-#trigAlkalEarthMetal:hover ~ .lantanoid {
-    background-color: rgb(50,50,50);
-    color: rgb(50,50,50);
-}
-
-#trigAlkalEarthMetal:hover ~ .aktinoid {
-    background-color: rgb(50,50,50);
-    color: rgb(50,50,50);
-}
-
-#trigAlkalEarthMetal:hover ~ .semiMetal {
-    background-color: rgb(50,50,50);
-    color: rgb(50,50,50);
-}
-
-#trigAlkalEarthMetal:hover ~ .nonMetal {
-    background-color: rgb(50,50,50);
-    color: rgb(50,50,50);
-}
-
-#trigAlkalEarthMetal:hover ~ .royalGas {
-    background-color: rgb(50,50,50);
-    color: rgb(50,50,50);
-}
-
-.transMetal{
+.transMetal,.transMetalCon{
     background-color:darkred;
 }
-#trigTransMetal:hover ~ .alkalEarthMetal {
-    background-color: rgb(50,50,50);
-    color: rgb(50,50,50);
-}
-
-#trigTransMetal:hover ~ .alkalMetal {
-    background-color: rgb(50,50,50);
-    color: rgb(50,50,50);
-}
-
-#trigTransMetal:hover ~ .postMetal {
-    background-color: rgb(50,50,50);
-    color: rgb(50,50,50);
-}
-
-#trigTransMetal:hover ~ .lantanoid {
-    background-color: rgb(50,50,50);
-    color: rgb(50,50,50);
-}
-
-#trigTransMetal:hover ~ .aktinoid {
-    background-color: rgb(50,50,50);
-    color: rgb(50,50,50);
-}
-
-#trigTransMetal:hover ~ .semiMetal {
-    background-color: rgb(50,50,50);
-    color: rgb(50,50,50);
-}
-
-#trigTransMetal:hover ~ .nonMetal {
-    background-color: rgb(50,50,50);
-    color: rgb(50,50,50);
-}
-
-#trigTransMetal:hover ~ .royalGas {
-    background-color: rgb(50,50,50);
-    color: rgb(50,50,50);
-}
+#trigTransMetal:hover ~ .alkalEarthMetal {background-color: rgb(50,50,50);color: rgb(50,50,50);}
+#trigTransMetal:hover ~ .alkalMetal {background-color: rgb(50,50,50);color: rgb(50,50,50);}
+#trigTransMetal:hover ~ .postMetal {background-color: rgb(50,50,50);color: rgb(50,50,50);}
+#trigTransMetal:hover ~ .lantanoid {background-color: rgb(50,50,50);color: rgb(50,50,50);}
+#trigTransMetal:hover ~ .aktinoid {background-color: rgb(50,50,50);color: rgb(50,50,50);}
+#trigTransMetal:hover ~ .semiMetal {background-color: rgb(50,50,50);color: rgb(50,50,50);}
+#trigTransMetal:hover ~ .nonMetal {background-color: rgb(50,50,50);color: rgb(50,50,50);}
+#trigTransMetal:hover ~ .royalGas {background-color: rgb(50,50,50);color: rgb(50,50,50);}
+#trigTransMetal:hover ~ .us {background-color: rgb(50,50,50);color: rgb(50,50,50);}
 
 
-.postMetal{
+.postMetal,.postMetalCon{
     background-color:darkslateblue;
 }
-#trigPostMetal:hover {
-    background-color: rgb(50,50,50);
-    color: rgb(50,50,50);
-}
+#trigPostMetal:hover ~ .alkalEarthMetal {background-color: rgb(50,50,50);color: rgb(50,50,50);}
+#trigPostMetal:hover ~ .alkalMetal{background-color: rgb(50,50,50);color: rgb(50,50,50);}
+#trigPostMetal:hover ~ .transMetal{background-color: rgb(50,50,50);color: rgb(50,50,50);}
+#trigPostMetal:hover ~ .lantanoid{background-color: rgb(50,50,50);color: rgb(50,50,50);}
+#trigPostMetal:hover ~ .aktinoid{background-color: rgb(50,50,50);color: rgb(50,50,50);}
+#trigPostMetal:hover ~ .semiMetal{background-color: rgb(50,50,50);color: rgb(50,50,50);}
+#trigPostMetal:hover ~ .nonMetal{background-color: rgb(50,50,50);color: rgb(50,50,50);}
+#trigPostMetal:hover ~ .royalGas{background-color: rgb(50,50,50);color: rgb(50,50,50);}
+#trigPostMetal:hover ~ .us{background-color: rgb(50,50,50);color: rgb(50,50,50);}
 
-.lantanoid {
+.lantanoid,.lantanoidCon {
     background-color: rgb(75, 35, 0);
 }
-#trigLantanoid:hover {
-    background-color: rgb(50,50,50);
-    color: rgb(50,50,50);
-}
+#trigLantanoid:hover ~ .alkalEarthMetal{background-color: rgb(50,50,50);color: rgb(50,50,50);}
+#trigLantanoid:hover ~ .alkalMetal{background-color: rgb(50,50,50);color: rgb(50,50,50);}
+#trigLantanoid:hover ~ .transMetal{background-color: rgb(50,50,50);color: rgb(50,50,50);}
+#trigLantanoid:hover ~ .postMetal{background-color: rgb(50,50,50);color: rgb(50,50,50);}
+#trigLantanoid:hover ~ .aktinoid{background-color: rgb(50,50,50);color: rgb(50,50,50);}
+#trigLantanoid:hover ~ .semiMetal{background-color: rgb(50,50,50);color: rgb(50,50,50);}
+#trigLantanoid:hover ~ .nonMetal{background-color: rgb(50,50,50);color: rgb(50,50,50);}
+#trigLantanoid:hover ~ .royalGas{background-color: rgb(50,50,50);color: rgb(50,50,50);}
+#trigLantanoid:hover ~ .us{background-color: rgb(50,50,50);color: rgb(50,50,50);}
 
-.aktinoid{
+.aktinoid,.aktinoidCon{
     background-color:rgb(150, 50, 50);
 }
-#trigAktinoid:hover {
-    background-color: rgb(50,50,50);
-    color: rgb(50,50,50);
-}
+#trigAktinoid:hover ~ .alkalEarthMetal{background-color: rgb(50,50,50);color: rgb(50,50,50);}
+#trigAktinoid:hover ~ .alkalMetal{background-color: rgb(50,50,50);color: rgb(50,50,50);}
+#trigAktinoid:hover ~ .transMetal{background-color: rgb(50,50,50);color: rgb(50,50,50);}
+#trigAktinoid:hover ~ .postMetal{background-color: rgb(50,50,50);color: rgb(50,50,50);}
+#trigAktinoid:hover ~ .lantanoid{background-color: rgb(50,50,50);color: rgb(50,50,50);}
+#trigAktinoid:hover ~ .semiMetal{background-color: rgb(50,50,50);color: rgb(50,50,50);}
+#trigAktinoid:hover ~ .nonMetal{background-color: rgb(50,50,50);color: rgb(50,50,50);}
+#trigAktinoid:hover ~ .royalGas{background-color: rgb(50,50,50);color: rgb(50,50,50);}
+#trigAktinoid:hover ~ .us{background-color: rgb(50,50,50);color: rgb(50,50,50);}
 
-.semiMetal{
+.semiMetal,.semiMetalCon{
     background-color:darkslategrey;
 }
-#trigSemiMetal:hover {
-    background-color: rgb(50,50,50);
-    color: rgb(50,50,50);
-}
+#trigSemiMetal:hover ~ .alkalEarthMetal{background-color: rgb(50,50,50);color: rgb(50,50,50);}
+#trigSemiMetal:hover ~ .alkalMetal{background-color: rgb(50,50,50);color: rgb(50,50,50);}
+#trigSemiMetal:hover ~ .transMetal{background-color: rgb(50,50,50);color: rgb(50,50,50);}
+#trigSemiMetal:hover ~ .postMetal{background-color: rgb(50,50,50);color: rgb(50,50,50);}
+#trigSemiMetal:hover ~ .lantanoid{background-color: rgb(50,50,50);color: rgb(50,50,50);}
+#trigSemiMetal:hover ~ .aktinoid{background-color: rgb(50,50,50);color: rgb(50,50,50);}
+#trigSemiMetal:hover ~ .nonMetal{background-color: rgb(50,50,50);color: rgb(50,50,50);}
+#trigSemiMetal:hover ~ .royalGas{background-color: rgb(50,50,50);color: rgb(50,50,50);}
+#trigSemiMetal:hover ~ .us{background-color: rgb(50,50,50);color: rgb(50,50,50);}
 
-.nonMetal{
+.nonMetal,.nonMetalCon{
     background-color:darkgreen;
 }
-#trigNonMetal:hover {
-    background-color: rgb(50,50,50);
-    color: rgb(50,50,50);
-}
+#trigNonMetal:hover ~ .alkalMetal{background-color: rgb(50,50,50);color: rgb(50,50,50);}
+#trigNonMetal:hover ~ .alkalEarthMetal{background-color: rgb(50,50,50);color: rgb(50,50,50);}
+#trigNonMetal:hover ~ .transMetal{background-color: rgb(50,50,50);color: rgb(50,50,50);}
+#trigNonMetal:hover ~ .postMetal{background-color: rgb(50,50,50);color: rgb(50,50,50);}
+#trigNonMetal:hover ~ .lantanoid{background-color: rgb(50,50,50);color: rgb(50,50,50);}
+#trigNonMetal:hover ~ .aktinoid{background-color: rgb(50,50,50);color: rgb(50,50,50);}
+#trigNonMetal:hover ~ .semiMetal{background-color: rgb(50,50,50);color: rgb(50,50,50);}
+#trigNonMetal:hover ~ .royalGas{background-color: rgb(50,50,50);color: rgb(50,50,50);}
+#trigNonMetal:hover ~ .us{background-color: rgb(50,50,50);color: rgb(50,50,50);}
 
-.royalGas{
+.royalGas,.royalGasCon{
     background-color:indigo;
 }
-#trigRoyalGas:hover {
-    background-color: rgb(50,50,50);
-    color: rgb(50,50,50);
-}
+#trigRoyalGas:hover ~.alkalMetal{background-color: rgb(50,50,50);color: rgb(50,50,50);}
+#trigRoyalGas:hover ~.alkalEarthMetal{background-color: rgb(50,50,50);color: rgb(50,50,50);}
+#trigRoyalGas:hover ~.transMetal{background-color: rgb(50,50,50);color: rgb(50,50,50);}
+#trigRoyalGas:hover ~.postMetal{background-color: rgb(50,50,50);color: rgb(50,50,50);}
+#trigRoyalGas:hover ~.lantanoid{background-color: rgb(50,50,50);color: rgb(50,50,50);}
+#trigRoyalGas:hover ~.aktinoid{background-color: rgb(50,50,50);color: rgb(50,50,50);}
+#trigRoyalGas:hover ~.semiMetal{background-color: rgb(50,50,50);color: rgb(50,50,50);}
+#trigRoyalGas:hover ~.nonMetal{background-color: rgb(50,50,50);color: rgb(50,50,50);}
+#trigRoyalGas:hover ~.us{background-color: rgb(50,50,50);color: rgb(50,50,50);}
