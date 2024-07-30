@@ -7,19 +7,69 @@
     <link rel="stylesheet" href="calc.css">
 </head>
 <body>
-    <div class="main_window">
-        <div class="title_bar">
-            <div class="title_bar_left_side">
-                <img src="img/calc_icon.png" id="app_icon">
-                - Калькулятор
-            </div>
+	<div class="main_window">
+		<div class="title_bar">
+			<div class="title_bar_left_side">
+				<img src="img/calc_icon.png" id="app_icon">
+				- Калькулятор
+			</div>
 			<div class="title_bar_right_side">
 				<input class="control_button" type="image" src="img/minimize_button.png">
 				<input class="control_button" type="image" src="img/maximize_button.png">
 				<input class="control_button" id="close_button" type="image" src="img/close_button.png">
 			</div>
+		</div>
+		<div class="menu">
+			<input class="menu_button" type="button" value="Правка">
+			<input class="menu_button" type="button" value="Вид">
+			<input class="menu_button" type="button" value="Справка">
+		</div>
+		<div class="text_bar">
+			<input class="textbox" type="text">
+		</div>
+		<div class="horizontal_control_bar">
+			<div class="space"></div>
+			<input type="button" value="Backspace" class="horizontal_control_button">
+			<input type="button" value="CE" class="horizontal_control_button">
+			<input type="button" value="C" class="horizontal_control_button">
+		</div>
+		<div class="vertical_control_box">
+			<input type="button"value="MC" class="vertical_control_button">
+			<input type="button"value="MR" class="vertical_control_button">
+			<input type="button"value="MS" class="vertical_control_button">
+			<input type="button"value="M+" class="vertical_control_button">
+		</div>
+		<div class="num_panel">
+			<div class="num_panel_string">
+				<input type="button" value="7" class="num_button">
+				<input type="button" value="8" class="num_button">
+				<input type="button" value="9" class="num_button">
+				<input type="button" value="/" class="num_button">
+				<input type="button" value="sqrt" class="num_button">
+			</div>
+			<div class="num_panel_string">
+				<input type="button" value="4" class="num_button">
+				<input type="button" value="5" class="num_button">
+				<input type="button" value="6" class="num_button">
+				<input type="button" value="*" class="num_button">
+				<input type="button" value="%" class="num_button">
+			</div>
+			<div class="num_panel_string">
+				<input type="button" value="1" class="num_button">
+				<input type="button" value="2" class="num_button">
+				<input type="button" value="3" class="num_button">
+				<input type="button" value="-" class="num_button">
+				<input type="button" value="1/x" class="num_button">
+			</div>
+			<div class="num_panel_string">
+				<input type="button" value="0" class="num_button">
+				<input type="button" value="+/-" class="num_button">
+				<input type="button" value="." class="num_button">
+				<input type="button" value="+" class="num_button">
+				<input type="button" value="=" class="num_button">
+			</div>
 
-        </div>
-    </div>
+		</div>
+	</div>
 </body>
 </html>
