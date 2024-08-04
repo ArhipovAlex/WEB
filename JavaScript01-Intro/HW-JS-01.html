@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+
+<html lang="ru" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <title>Homework-JS-01</title>
+</head>
+<body>
+	<!--
+	<script>
+		var number = prompt("Проверка на палиндром. Введите число:");
+		var palin = true;
+		for (let i = 0; i < (number.length-1)/2; i++)
+		{
+			if (number[i] != number[number.length-1 - i])
+			{
+				palin = false;
+				break;
+			}
+		}
+		if (palin) {
+			console.log(`${number} - палиндром`);
+		}
+		else {
+			console.log(`${number} не является палиндромом`);
+		}
+
+	</script>-->
+	<!--
+	<script>
+		var number = prompt("Вычисление факториала числа. Введите число: ");
+		var fact = 1;
+		for (let i = 1; i <= Number(number); i++) fact *= i;
+		console.log(`${number}!=${fact}`);
+	</script>-->
+	<!--
+	<script>
+		var number = prompt("Возведение числа в степень. Введите число: ");
+		var degree = prompt("Введите степень: ");
+		var answer = 1;
+		for (let i = 0; i < Math.abs(Number(degree)); i++) {
+			answer *= Number(number);
+		}
+		if (Number(degree) < 0) answer = 1 / answer;
+		console.log(`${number} в степени ${degree} = ${answer}`);
+	</script>-->
+	<!--
+	<script>
+		var limit = prompt("Ряд Фибоначчи. Введите верхний предел ряда:");
+		var fibonacci = [0, 1];
+		var i = 2;
+		while (fibonacci[i-1] < Number(limit)) {
+			fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
+			i++;
+		}
+		console.log(fibonacci.slice(0, i-1));
+	</script>-->
+	<!--
+	<script>
+		var amount = prompt("Ряд Фибоначчи. Введите количество членов ряда: ");
+		var fibonacci = [0, 1];
+		for (let i = 2; i < Number(amount); i++) {
+			fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
+		}
+		console.log(fibonacci.slice(0, Number(amount)));
+	</script>-->
+	<!--
+	<script>
+		var limit = prompt("Ряд простых чисел. Введите верхний предел ряда: ");
+		var prime = [2];
+		var i = 0;
+		var number = prime[i];
+		var its_prime = true;
+		while (number <= Number(limit)) {
+			number++;
+			its_prime = true;
+			for (let j = 2; j < number; j++) {
+				if (number % j == 0) {
+					its_prime = false;
+				}
+			}
+			if (its_prime) {
+				i++;
+				prime[i] = number;
+			}
+		}
+		console.log(prime.slice(0, i));
+	</script>-->
+
+	<script>
+		var amount = prompt("Ряд простых чисел. Введите количесвто членов ряда: ");
+		var prime = [2];
+		var i = 0;
+		var number = prime[i];
+		var its_prime = true;
+		while (i < Number(amount)) {
+			number++;
+			its_prime = true;
+			for (let j = 2; j < number; j++) {
+				if (number % j == 0) {
+					its_prime = false;
+				}
+			}
+			if (its_prime) {
+				i++;
+				prime[i] = number;
+			}
+		}
+		console.log(prime.slice(0, i));
+	</script>
+</body>
+</html>
