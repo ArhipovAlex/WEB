@@ -160,12 +160,17 @@ input[type=text] {
     justify-content: space-around;
     align-items: center;  
 }
-.command_button{
-    color:red;
+
+.digit_button {
+    width: 50px;
+    height: 36px;
+    margin:2px 0px 2px 8px;
+    color:blue;
 }
-    .digit_buttons input[type=button] {
-        width: 50px;
-        height: 36px;
-        margin:2px 0px 2px 8px;
-        color:blue;
-    }
+
+.command_button {
+    color: red;
+    width: 50px;
+    height: 36px;
+    margin: 2px 0px 2px 8px;
+}
