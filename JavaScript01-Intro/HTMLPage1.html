@@ -6,42 +6,176 @@
     <title>Introduction to JS</title>
 </head>
 <body>
-    <script>
-        /*
-        //alert("Hello World!");
-        var name = prompt("Введите ваше имя: ");
-        let surname;
-        const discipline = "JavaScript";
-        if (confirm(name + ", вы знаете HTML?")) {
-            var _var = "variable1";
+	<script>
+		/*
+		//alert("Hello World!");
+		var name = prompt("Введите ваше имя: ");
+		let surname;
+		const discipline = "JavaScript";
+		if (confirm(name + ", вы знаете HTML?")) {
+			var _var = "variable1";
 			let _let = "variable2";
 			document.write("<h2>Тогда начинаем <strong>JS</strong></h2>");
-        }
-        else {
+		}
+		else {
 			document.write("<h2>Значит надо выучить</h2>");
-        }
-        document.write(_var);
-        document.write(_let);
-        _var = 123;
+		}
+		document.write(_var);
+		document.write(_let);
+		_var = 123;
 		document.write(_var);*/
 
-        /*var a = 2;
-        document.writeln(a + " " + typeof (a));
-        document.writeln("Строка 1");
-        document.writeln('Строка 2');
-        let name = prompt("Введите ваше имя: ");
-        let age = prompt("Введите возраст: ");
-        document.writeln(`Hello ${name}! We are glad to see you!`);
-        document.writeln(typeof (name));
-        document.writeln(typeof (age));*/
-        /*let a = prompt("Введите первое число:");
-        let b = prompt("Введите второе число:");
-        let c = Number(a) + Number(b);
-        document.writeln(c);
-        document.writeln(typeof(c));*/
-        let i = 3;
-        let j = ++i;
-        console.log(i + "\t" + j);
-    </script>
+		/*var a = 2;
+		document.writeln(a + " " + typeof (a));
+		document.writeln("Строка 1");
+		document.writeln('Строка 2');
+		let name = prompt("Введите ваше имя: ");
+		let age = prompt("Введите возраст: ");
+		document.writeln(`Hello ${name}! We are glad to see you!`);
+		document.writeln(typeof (name));
+		document.writeln(typeof (age));*/
+		/*let a = prompt("Введите первое число:");
+		let b = prompt("Введите второе число:");
+		let c = Number(a) + Number(b);
+		document.writeln(c);
+		document.writeln(typeof(c));
+		let i = 3;
+		let j = ++i;
+		console.log(i + "\t" + j);*/
+		/*
+		document.write("<table>");
+		for (let i = 1; i <= 10; i++)
+		{
+			document.write("<tr>");
+
+			for (let j = 1; j < 10; j++)
+			{
+				document.write("<td>");
+				document.write(`${i}*${j}=${i*j}`);
+				document.write("</td>");
+			}
+			document.write("</tr>");
+		}
+		document.write("</table>");*/
+		/*let n = +prompt("Введите число: ");
+		for (let a = 0, b = 1, c = a + b; a < n; a = b, b = c, c = a + b) {
+			console.log(a);
+		}*/
+	</script>
+	<script>
+	/*
+				function sum(sum, value) {
+					return sum + value;
+				}
+
+				let arr = new Array(5);
+				for (let i = 0; i < arr.length; i++)
+				{
+					arr[i] = parseInt(Math.random()*100);
+					console.log(arr[i]);
+				}
+				console.table(arr);
+
+				let arr = [3, 5, 8, 12, 21, 34];
+				/*let arr2=new Array(0,1,1,2,3,5,8,13)
+				for (let i in arr2)
+					{
+						console.log(i)
+				}
+				arr2[9] = 34;
+				arr2[10] = 55;
+				arr2[11] = 89;
+				arr2.push(144);
+				arr2.pop();
+				document.write(arr + "<hr>");
+				document.write("Sum:" + arr.reduce((sum, a) => sum + a, 0) + "<hr>");
+				document.write("Sum:" + arr.reduce(sum,0) + "<hr>");
+				document.write("Avg:" + arr.reduce((sum, a) => sum + a, 0) / arr.length + "<hr>");
+				document.write("Min:" + arr.reduce((min, a) => min = a < min ? a : min) + "<hr>");
+				document.write("Max:" + arr.reduce((max, a) => max = a > max ? a : max) + "<hr>");
+				/*let decimal = +prompt("Введите десятичное число: ");
+				let binary = [0];
+				for (let i = 0; decimal; decimal=parseInt(decimal / 2), i++)
+				{
+					binary[i] = decimal % 2;
+				}
+				document.write(binary.reverse());
+
+				let arr2 = [
+					[1, 2, 3],
+					[4, 5, 6],
+					[7, 8, 9,11]
+				];
+
+				document.write(arr2);
+				console.table(arr2);
+
+				let arr2flat = arr2.reduce((sum, a) => sum.concat(a));
+				let sum2 = arr2flat.reduce((sum, a) => sum + a, 0);
+				document.write(arr + "<hr>");
+				//document.write("Sum:" + .reduce((sum, a) => sum + a, 0) + "<hr>");
+				//document.write("Sum:" + arr2.reduce((sum, a) => sum + a, 0) + "<hr>");
+				document.write("Sum:" + sum2 + "<hr>");
+				document.write("Avg:" + sum2 / arr2flat.length + "<hr>");
+				document.write("Min:" + arr2flat.reduce((min, a) => min = a < min ? a : min) + "<hr>");
+				document.write("Max:" + arr2flat.reduce((max, a) => max = a > max ? a : max) + "<hr>");
+				print(arr2);
+
+				function print(arr) {
+					document.write("<table width=500>");
+					for (let i = 0; i < arr.length; i++) {
+						document.write("<tr>");
+						for (let j = 0; j < arr[i].length; j++) {
+
+							document.write("<td>"+arr[i][j]+"</td>");
+						}
+						document.write("</tr>");
+					}
+					document.write("</table>");
+			   }*/
+	</script>
+	<!--Calc1
+	 <script>
+		let expression = prompt("Введите ариф выражение: ");
+		document.write(expression+" = ");
+		let numbers = expression.split(/[+\-*\/^]/);
+		console.log(numbers);
+		let a = Number(numbers[0]);
+		let b = Number(numbers[1]);
+		/*
+		if (expression.indexOf('+') > 0) { document.write(a + b) };
+		if (expression.indexOf('-') > 0) { document.write(a - b) };
+		if (expression.indexOf('*') > 0) { document.write(a * b) };
+		if (expression.indexOf('/') > 0) { document.write(a / b) };
+		if (expression.indexOf('^') > 0) { document.write(a ** b) };
+		*/
+		const regexp = /[+\-*\/]/g;
+		let s = [...expression.matchAll(regexp)];
+		console.log(s[0][0]);
+		switch (s[0][0]) {
+			case '+': document.write(a + b); break;
+			case '-': document.write(a - b); break;
+			case '*': document.write(a * b); break;
+			case '/': document.write(a / b); break;
+			case '^': document.write(a ** b); break;
+		}
+	</script>-->
+	Calc2:
+	 <script>
+		let expression = prompt("Введите ариф выражение: ");
+		document.write(expression+" = ");
+		let elements = expression.split(/([+\-*\/^])/);
+		 console.log(elements);
+		 let a = Number(elements[0]);
+		 let b = Number(elements[2]);
+		 switch (elements[1]) {
+			case '+': document.write(a + b); break;
+			case '-': document.write(a - b); break;
+			case '*': document.write(a * b); break;
+			case '/': document.write(a / b); break;
+			case '^': document.write(a ** b); break;
+		}
+	</script>
+
 </body>
 </html>
