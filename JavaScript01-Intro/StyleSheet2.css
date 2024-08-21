@@ -1,32 +1,48 @@
 ﻿body {
     /*background-color: #D8D8D8;*/
-    transition:background 2s, color 2s;
+    transition: background 2s, color 2s;
 }
 
-#header
-{
-    display:flex;
-
+#header {
+    display: flex;
 }
+
 #background_switch {
     width: 24px;
     height: 24px;
 }
+#background_switch_2 {
+    width: 24px;
+    height: 24px;
+}
+
 .light {
     background-color: #D8D8D8;
     color: #323232;
 }
-.light #background_switch
-{
-    animation: 2s;
-    content: url("img/moon.png");
-    
-}
+
+    .light #background_switch {
+        content: url("img/moon.png");
+        opacity: 1;
+        transition: all 2s ease-in-out;
+    }
+    .light #background_switch_2 {
+        opacity:0;
+        transition:all 2s ease-in-out;
+    }
+
 .dark {
     background-color: #323232;
     color: #D8D8D8;
 }
-    .dark #background_switch {
-        animation: 2s;
-        content: url("img/sun.png");
+
+    .dark #background_switch {opacity: 0;
+        transition: all 2s ease-in-out;
+
     }
+    .dark #background_switch_2 {
+        content: url("img/sun.png");
+        opacity: 1;
+        transition: all 2s ease-in-out;
+    }
+
