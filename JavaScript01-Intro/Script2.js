@@ -69,3 +69,34 @@ function animText() {
     id.innerHTML = text.substring(0, i++);
     setTimeout(animText, 100);
 }
+/////////////////
+let date = new Date();
+let result = "<h3>Дата и время</h3>";
+result += `Полная дата: ${date}<br>`;
+result += `Только дата: ${date.getFullYear()}.${checkNumber(date.getMonth() + 1)}.${checkNumber(date.getDate())}<br>`;
+result += `Только день недели: ${date.getDay()}<br>`;
+result += `Только время: ${date.toTimeString()}<br>`;
+document.getElementById("DateAndTime").innerHTML = result;
+
+document.body.onload = function tickTimer() {
+    let time = new Date();
+    let hh = checkNumber(time.getHours());
+    let mm = checkNumber(time.getMinutes());
+    let ss = checkNumber(time.getSeconds());
+    document.getElementById("timerDisplay").innerHTML = `${hh}:${mm}:${ss}`;
+    let checkBoxShowDate = document.getElementById("cbsShowDate").checked;
+    if (checkBoxShowDate == true) {
+        let yyyy = time.getFullYear();
+        let MM = checkNumber(time.getMonth() + 1);
+        let dd = checkNumber(time.getDate());
+        document.getElementById("dateDisplay").innerHTML = `${yyyy}/${MM}/${dd}`;
+    }
+    else {
+        document.getElementById("dateDisplay").innerHTML = ``;
+    }
+    setTimeout(tickTimer, 1000);
+}
+
+function checkNumber(i) {
+    return i < 10 ? "0" + i : i;
+}
