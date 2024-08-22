@@ -34,7 +34,8 @@ document.addEventListener("mousemove", function (event) {
 );
 ///////////////////
 function setImageVisibilityDelay() {
-    setTimeout("setImageVisibility()", 500);
+    let delay = document.getElementById("numDelay").value;
+    setTimeout("setImageVisibility()", Number(delay));
 }
 function setImageVisibility() {
     let image = document.getElementById("image");
