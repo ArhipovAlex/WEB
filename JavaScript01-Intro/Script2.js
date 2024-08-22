@@ -21,6 +21,12 @@ background_switch.onclick = function ()
         //document.body.style.backgroundColor = LIGHT;
         //document.body.style.color = DARK;
     //}
+    let backgroundDelay = document.getElementById("bkgDelay");
+    let delay = backgroundDelay.value;
+    document.body.style.transition = `background-color ${delay / 1000}s, color ${delay / 1000}s`;
+    console.log(document.body.style);
+    document.getElementById("background_switch").style.transition = `all ${delay / 1000}s ease-in-out`;
+    document.getElementById("background_switch_2").style.transition = `all ${delay / 1000}s ease-in-out`;
     document.body.className = document.body.className === "light" ? "dark" : "light";
 }
 ////////////////////

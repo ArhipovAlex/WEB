@@ -10,10 +10,12 @@
 #background_switch {
     width: 24px;
     height: 24px;
+    transition: all 2s ease-in-out;
 }
 #background_switch_2 {
     width: 24px;
     height: 24px;
+    transition: all 2s ease-in-out;
 }
 
 .light {
@@ -24,11 +26,11 @@
     .light #background_switch {
         content: url("img/moon.png");
         opacity: 1;
-        transition: all 2s ease-in-out;
+        /*transition: all 2s ease-in-out;*/
     }
     .light #background_switch_2 {
         opacity:0;
-        transition:all 2s ease-in-out;
+        /*transition:all 2s ease-in-out;*/
     }
 
 .dark {
