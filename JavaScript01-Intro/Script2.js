@@ -94,6 +94,21 @@ document.body.onload = function tickTimer() {
     else {
         document.getElementById("dateDisplay").innerHTML = ``;
     }
+
+    let num = document.getElementById("choiseHour").value;
+    let choiseHour = Number(num);
+    num = document.getElementById("choiseMinutes").value;
+    let choiseMinutes = Number(num);
+    num = document.getElementById("choiseSecond").value;
+    let choiseSecond = Number(num);
+    let leftSecond = choiseSecond - ss;
+    let leftMinutes = choiseMinutes - mm;
+    let leftHour = choiseHour - hh;
+    if (leftSecond < 0) { leftSecond += 60; leftMinutes -= 1; }
+    if (leftMinutes < 0) { leftMinutes += 60; leftHour -= 1; }
+    if (leftHour < 0) { leftHour += 24; }
+    document.getElementById("timeLeft").innerHTML = `${checkNumber(leftHour)}:${checkNumber(leftMinutes)}:${checkNumber(leftSecond)}`;
+
     setTimeout(tickTimer, 1000);
 }
 
