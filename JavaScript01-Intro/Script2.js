@@ -150,15 +150,27 @@ function tickCountdown()
 {
     if (!document.getElementById("targetTime").disabled) return;
     let now = new Date();
+
+    let currentTimeZoneOffsetInHours = now.getTimezoneOffset() / 60;
+
     let targetTimeControl = document.getElementById("targetTime");
     let targetTime = targetTimeControl.valueAsDate;
-    //targetTime.setDate(now.toDateString());
-    targetTime.setFullYear(now.getFullYear());
-    targetTime.setMonth(now.getMonth());
-    targetTime.setDate(now.getDate());
+
+    targetTime.setHours(targetTime.getHours() + currentTimeZoneOffsetInHours);
+
+    let targetDateControl = document.getElementById("targetDate");
+    let targetDate = targetDateControl.valueAsDate;
+    targetTime.setFullYear(targetDate.getFullYear());
+    targetTime.setMonth(targetDate.getMonth());
+    targetTime.setDate(targetDate.getDate());
     let duration = targetTime;
     //document.getElementById("result").innerHTML = duration + "<br>" + now;
     let timestamp = targetTime - now;
-    document.getElementById("result").innerHTML = new Date(timestamp).toTimeString();
+    //timestamp.setHours(timestamp.getHours() + currentTimeZoneOffsetInHours);
+    timestamp = new Date(timestamp);
+    let startDate = new Date(0);
+    timestamp.setHours(timestamp.getHours() + currentTimeZoneOffsetInHours);
+    document.getElementById("result").innerHTML = (Math.round(Math.abs(timestamp) / (1000 * 3600 * 24),0)) + " дней " + timestamp.toTimeString();
+    //document.getElementById("result").innerHTML = new Date(timestamp);
     if(duration>0)setTimeout(tickCountdown, 1000);
 }
