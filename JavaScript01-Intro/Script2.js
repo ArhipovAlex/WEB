@@ -148,6 +148,7 @@ document.getElementById("btnStart").onclick = function ()
 }
 function tickCountdown()
 {
+
     if (!document.getElementById("targetTime").disabled) return;
     let now = new Date();
 
@@ -170,7 +171,61 @@ function tickCountdown()
     timestamp = new Date(timestamp);
     let startDate = new Date(0);
     timestamp.setHours(timestamp.getHours() + currentTimeZoneOffsetInHours);
-    document.getElementById("result").innerHTML = (Math.round(Math.abs(timestamp) / (1000 * 3600 * 24),0)) + " дней " + timestamp.toTimeString();
-    //document.getElementById("result").innerHTML = new Date(timestamp);
-    if(duration>0)setTimeout(tickCountdown, 1000);
+    //document.getElementById("result").innerHTML = (Math.round(Math.abs(timestamp) / (1000 * 3600 * 24),0)) + " дней " + timestamp.toTimeString();
+
+    document.getElementById("leftsecond").className = 'main_item';
+    document.getElementById("leftsecond").innerHTML = checkNumber(timestamp.getSeconds()) + "<br>секунд";
+    document.getElementById("leftminutes").className = 'main_item';
+    document.getElementById("leftminutes").innerHTML = checkNumber(timestamp.getMinutes()) + "<br>минут";
+    document.getElementById("lefthour").className = 'main_item';
+    document.getElementById("lefthour").innerHTML = checkNumber(timestamp.getHours()) + "<br>часов";
+    let days = Math.ceil(timestamp / (1000 * 3600 * 24)-0.666671873);
+    document.getElementById("test").innerHTML = checkNumber(days) + "<br>дней";
+
+    let week = Math.trunc(days / 7);
+    let month = Math.trunc(week / 4);
+    let year = Math.trunc(month / 12);
+    if (year > 0)
+    {
+        document.getElementById("leftyear").className = 'main_item';
+        document.getElementById("leftyear").innerHTML = year + "<br>лет";
+        month -= year * 12;
+    }
+    else
+    {
+        document.getElementById("leftyear").className = 'main_item_hidden';
+        document.getElementById("leftyear").innerHTML = "";
+    }
+    if (month > 0)
+    {
+        document.getElementById("leftmonth").className = 'main_item';
+        document.getElementById("leftmonth").innerHTML = month + "<br>месяцев";
+        week = 0;
+        days = 0;
+    }
+    else
+    {
+        document.getElementById("leftmonth").className = 'main_item_hidden';
+        document.getElementById("leftmonth").innerHTML = "";
+    }
+    if (week > 0) {
+        document.getElementById("leftweek").className = 'main_item';
+        document.getElementById("leftweek").innerHTML = week + "<br>недель";
+        days -= week * 7;
+    }
+    else
+    {
+        document.getElementById("leftweek").className = 'main_item_hidden';
+        document.getElementById("leftweek").innerHTML = "";
+    }
+    if (days > 0) {
+        document.getElementById("leftdays").className = 'main_item';
+        document.getElementById("leftdays").innerHTML = checkNumber(days) + "<br>дней";
+    }
+    else
+    {
+        document.getElementById("leftdays").className = 'main_item_hidden';
+        document.getElementById("leftdays").innerHTML = "";
+    }
+    if (duration > 0) setTimeout(tickCountdown, 1000);
 }
