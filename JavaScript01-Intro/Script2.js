@@ -148,6 +148,12 @@ document.getElementById("btnStart").onclick = function ()
 }
 function tickCountdown()
 {
+    document.getElementById("leftyear").className = 'main_item_hidden';
+    document.getElementById("leftyear").innerHTML = "";
+    document.getElementById("leftmonth").className = 'main_item_hidden';
+    document.getElementById("leftmonth").innerHTML = "";
+    document.getElementById("leftweek").className = 'main_item_hidden';
+    document.getElementById("leftweek").innerHTML = "";
 
     if (!document.getElementById("targetTime").disabled) return;
     let now = new Date();
@@ -156,9 +162,7 @@ function tickCountdown()
 
     let targetTimeControl = document.getElementById("targetTime");
     let targetTime = targetTimeControl.valueAsDate;
-
     targetTime.setHours(targetTime.getHours() + currentTimeZoneOffsetInHours);
-
     let targetDateControl = document.getElementById("targetDate");
     let targetDate = targetDateControl.valueAsDate;
     targetTime.setFullYear(targetDate.getFullYear());
@@ -167,60 +171,68 @@ function tickCountdown()
     let duration = targetTime;
     //document.getElementById("result").innerHTML = duration + "<br>" + now;
     let timestamp = targetTime - now;
+    timestamp = Math.trunc(timestamp/1000);
+    //timestamp *= 1000;
+    document.getElementById("test").innerHTML = timestamp;
     //timestamp.setHours(timestamp.getHours() + currentTimeZoneOffsetInHours);
-    timestamp = new Date(timestamp);
-    let startDate = new Date(0);
-    timestamp.setHours(timestamp.getHours() + currentTimeZoneOffsetInHours);
+    //timestamp = new Date(timestamp);
+    //let startDate = new Date(0);
+    //timestamp.setHours(timestamp.getHours() + currentTimeZoneOffsetInHours);
     //document.getElementById("result").innerHTML = (Math.round(Math.abs(timestamp) / (1000 * 3600 * 24),0)) + " дней " + timestamp.toTimeString();
-
+    let days = Math.floor(timestamp / 86400);
+    timestamp -= days * 86400;
+    let hours = Math.floor(timestamp / 3600) % 24;
+    timestamp -= hours * 3600;
+    let minutes = Math.floor(timestamp / 60) % 60;
+    timestamp -= minutes * 60;
+    let second = timestamp % 60;
     document.getElementById("leftsecond").className = 'main_item';
-    document.getElementById("leftsecond").innerHTML = checkNumber(timestamp.getSeconds()) + "<br>секунд";
+    document.getElementById("leftsecond").innerHTML = second + "<br>секунд";
     document.getElementById("leftminutes").className = 'main_item';
-    document.getElementById("leftminutes").innerHTML = checkNumber(timestamp.getMinutes()) + "<br>минут";
+    document.getElementById("leftminutes").innerHTML = minutes + "<br>минут";
     document.getElementById("lefthour").className = 'main_item';
-    document.getElementById("lefthour").innerHTML = checkNumber(timestamp.getHours()) + "<br>часов";
-    let days = Math.ceil(timestamp / (1000 * 3600 * 24)-0.666671873);
+    document.getElementById("lefthour").innerHTML = hours + "<br>часов";
+
     document.getElementById("test").innerHTML = checkNumber(days) + "<br>дней";
 
-    let week = Math.trunc(days / 7);
-    let month = Math.trunc(week / 4);
-    let year = Math.trunc(month / 12);
-    if (year > 0)
-    {
-        document.getElementById("leftyear").className = 'main_item';
-        document.getElementById("leftyear").innerHTML = year + "<br>лет";
-        month -= year * 12;
-    }
-    else
-    {
-        document.getElementById("leftyear").className = 'main_item_hidden';
-        document.getElementById("leftyear").innerHTML = "";
-    }
-    if (month > 0)
-    {
-        document.getElementById("leftmonth").className = 'main_item';
-        document.getElementById("leftmonth").innerHTML = month + "<br>месяцев";
-        week = 0;
-        days = 0;
-    }
-    else
-    {
-        document.getElementById("leftmonth").className = 'main_item_hidden';
-        document.getElementById("leftmonth").innerHTML = "";
-    }
-    if (week > 0) {
-        document.getElementById("leftweek").className = 'main_item';
-        document.getElementById("leftweek").innerHTML = week + "<br>недель";
-        days -= week * 7;
-    }
-    else
-    {
-        document.getElementById("leftweek").className = 'main_item_hidden';
-        document.getElementById("leftweek").innerHTML = "";
-    }
     if (days > 0) {
         document.getElementById("leftdays").className = 'main_item';
-        document.getElementById("leftdays").innerHTML = checkNumber(days) + "<br>дней";
+        document.getElementById("leftdays").innerHTML = days + "<br>дней";
+        let leftday = days;
+        let year = Math.floor(leftday / 365);
+        if (year > 0) {
+            document.getElementById("leftyear").className='main_item';
+            document.getElementById("leftyear").innerHTML = year + "<br>лет";
+        } else {
+            document.getElementById("leftyear").className='main_item_hidden';
+            document.getElementById("leftyear").innerHTML = "";
+        }
+        leftday -= (year * 365);
+        let month = Math.floor(leftday / 30);
+        leftday -= month * 30;
+        if (month > 0)
+        {
+                document.getElementById("leftmonth").className = 'main_item';
+                document.getElementById("leftmonth").innerHTML = month + "<br>месяцев";
+                document.getElementById("leftdays").innerHTML = leftday + "<br>дней";
+            }
+            else {
+                document.getElementById("leftmonth").className = 'main_item_hidden';
+                document.getElementById("leftmonth").innerHTML = "";
+            }
+        let week = Math.floor(leftday / 7);
+        if (week > 0)
+            {
+                document.getElementById("leftweek").className = 'main_item';
+                document.getElementById("leftweek").innerHTML = week + "<br>недель";
+                leftday -= week * 7;
+                document.getElementById("leftdays").innerHTML = leftday + "<br>дней";
+            }
+            else
+            {
+                document.getElementById("leftweek").className = 'main_item_hidden';
+                document.getElementById("leftweek").innerHTML = "";
+            }
     }
     else
     {
