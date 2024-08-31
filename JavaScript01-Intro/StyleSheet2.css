@@ -81,9 +81,10 @@
     height: 30px;
     font-size: 23px;
     text-align: center;
-
-    animation: 0.7s linear infinite rotate;
-    transform-origin:bottom;
+    animation: 0.5s linear infinite rotate;
+    animation-delay: 1s;
+    transform-origin: bottom;
+    
 }
 
 @keyframes rotate{
@@ -92,5 +93,30 @@
     }
     to{
         transform:rotateX(90deg);
+    }
+}
+
+.main_item2_anim {
+    background: orange;
+    border-block-color: black;
+    border-block-style: solid;
+    padding: 10px;
+    margin-right: 5px;
+    width: 82px;
+    height: 30px;
+    font-size: 23px;
+    text-align: center;
+    animation: 0.5s linear infinite rotate2;
+    animation-delay: 1.5s;
+    transform-origin: top;
+    
+}
+@keyframes rotate2 {
+    from {
+        transform: rotateX(90deg);
+    }
+
+    to {
+        transform: rotateX(0deg);
     }
 }
