@@ -154,6 +154,8 @@ function tickCountdown()
     document.getElementById("leftmonth").innerHTML = "";
     document.getElementById("leftweek").className = 'main_item_hidden';
     document.getElementById("leftweek").innerHTML = "";
+    document.getElementById("leftdays").className = 'main_item_hidden';
+    document.getElementById("leftdays").innerHTML = "";
 
     if (!document.getElementById("targetTime").disabled) return;
     let now = new Date();
@@ -200,6 +202,7 @@ function tickCountdown()
         document.getElementById("leftdays").innerHTML = days + "<br>дней";
         let leftday = days;
         let year = Math.floor(leftday / 365);
+        leftday -= (year * 365);
         if (year > 0) {
             document.getElementById("leftyear").className='main_item';
             document.getElementById("leftyear").innerHTML = year + "<br>лет";
@@ -207,7 +210,6 @@ function tickCountdown()
             document.getElementById("leftyear").className='main_item_hidden';
             document.getElementById("leftyear").innerHTML = "";
         }
-        leftday -= (year * 365);
         let month = Math.floor(leftday / 30);
         leftday -= month * 30;
         if (month > 0)
@@ -221,11 +223,11 @@ function tickCountdown()
                 document.getElementById("leftmonth").innerHTML = "";
             }
         let week = Math.floor(leftday / 7);
+        leftday -= week * 7;
         if (week > 0)
             {
                 document.getElementById("leftweek").className = 'main_item';
                 document.getElementById("leftweek").innerHTML = week + "<br>недель";
-                leftday -= week * 7;
                 document.getElementById("leftdays").innerHTML = leftday + "<br>дней";
             }
             else

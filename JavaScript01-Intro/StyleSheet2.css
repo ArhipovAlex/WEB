@@ -56,13 +56,41 @@
 
 .main_item {
     background: orange;
+    border-block-color:black;
+    border-block-style:solid;
     padding: 10px;
     margin-right: 5px;
     width: 82px;
-    height: 50px;
+    height: 30px;
     font-size: 23px;
     text-align:center;
+
+
 }
 .main_item_hidden{
     background-color:none;
+}
+
+.main_item1_anim {
+    background: orange;
+    border-block-color: black;
+    border-block-style: solid;
+    padding: 10px;
+    margin-right: 5px;
+    width: 82px;
+    height: 30px;
+    font-size: 23px;
+    text-align: center;
+
+    animation: 0.7s linear infinite rotate;
+    transform-origin:bottom;
+}
+
+@keyframes rotate{
+    from{
+        transform:rotateX(0deg);
+    }
+    to{
+        transform:rotateX(90deg);
+    }
 }
