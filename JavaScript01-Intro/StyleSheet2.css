@@ -82,7 +82,7 @@
     font-size: 23px;
     text-align: center;
     animation: 0.5s linear infinite rotate;
-    animation-delay: 1s;
+    /*animation-delay: 1s;*/
     transform-origin: bottom;
     
 }
@@ -107,7 +107,7 @@
     font-size: 23px;
     text-align: center;
     animation: 0.5s linear infinite rotate2;
-    animation-delay: 1.5s;
+    animation-delay: 0.5s;
     transform-origin: top;
     
 }

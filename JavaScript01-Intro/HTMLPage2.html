@@ -36,26 +36,11 @@
 		<input type="number" id="choiseMinutes" min="0" max="59" step="1" value="0" style="width:82px; height:50px;font-size:23px">
 		<input type="number" id="choiseSecond" min="0" max="59" step="1" value="0" style="width:82px; height:50px;font-size:23px">
 
-		<input type="date" id="targetDate" value="2024-08-22">
+		<input type="date" id="targetDate" value="2025-09-05">
 		<input type="time" id="targetTime" value="21:45">
 		<input type="button" id="btnStart" value="Start">
 		<div id="result" class="main">
-			<div  class="main_item_hidden">
-				<div id="leftyear"class="main_item">00</div>
-				<div class="main_item">лет</div>
-			</div>
-			<div  class="main_item_hidden">
-				<div id="leftmonth"class="main_item">00</div>
-				<div class="main_item">месяцев</div>
-			</div>
-			<div  class="main_item_hidden">
-				<div id="leftweek"class="main_item">00</div>
-				<div class="main_item">недель</div>
-			</div>
-			<div  class="main_item_hidden">
-				<div id="leftdays"class="main_item">00</div>
-				<div class="main_item">дней</div>
-			</div>
+
 			<div  class="main_item_hidden">
 				<div id="lefthour"class="main_item">00</div>
 				<div class="main_item">часов</div>
@@ -66,9 +51,9 @@
 			</div>
 			<div  class="main_item_hidden">
 				<div id="leftsecond1" class="main_item" style="z-index:2; position:absolute">00</div>
-				<div class="main_item" style="z-index: 1; position: absolute">00</div>
+				<div id="leftsecond1_back" class="main_item" style="z-index: 1; position: absolute">00</div>
 				<div id="leftsecond2" class="main_item" style="z-index: 2; position: absolute; top: 650px">секунд</div>
-				<div class="main_item" style="z-index: 1; position: absolute; top:650px">секунд</div>
+				<div id="leftsecond2_back" class="main_item" style="z-index: 1; position: absolute; top:650px">секунд</div>
 			</div>
 		</div>
 		<div id="timeLeft" style="font-size:58px; text-align:center"></div>

@@ -130,6 +130,8 @@ document.getElementById("btnStart").onclick = function ()
     else
     { 
         btnStart.value = "Start";
+        document.getElementById("leftsecond1").className = 'main_item';
+        document.getElementById("leftsecond2").className = 'main_item';
     }
     //let date = document.getElementById("targetDate").valueAsDate;
     //let time = document.getElementById("targetTime").valueAsDate;
@@ -146,8 +148,7 @@ document.getElementById("btnStart").onclick = function ()
     //element.append(p_date);
     //element.append(p_time);
 }
-function tickCountdown()
-{
+function tickCountdown() {
     //document.getElementById("leftyear").className = 'main_item_hidden';
     //document.getElementById("leftyear").innerHTML = "";
     //document.getElementById("leftmonth").className = 'main_item_hidden';
@@ -156,6 +157,8 @@ function tickCountdown()
     //document.getElementById("leftweek").innerHTML = "";
     //document.getElementById("leftdays").className = 'main_item_hidden';
     //document.getElementById("leftdays").innerHTML = "";
+    document.getElementById("leftsecond1").className = 'main_item';
+    document.getElementById("leftsecond2").className = 'main_item';
 
     if (!document.getElementById("targetTime").disabled) return;
     let now = new Date();
@@ -173,7 +176,7 @@ function tickCountdown()
     let duration = targetTime;
     //document.getElementById("result").innerHTML = duration + "<br>" + now;
     let timestamp = targetTime - now;
-    timestamp = Math.trunc(timestamp/1000);
+    timestamp = Math.trunc(timestamp / 1000);
     //timestamp *= 1000;
     document.getElementById("test").innerHTML = timestamp;
     //timestamp.setHours(timestamp.getHours() + currentTimeZoneOffsetInHours);
@@ -190,7 +193,13 @@ function tickCountdown()
     let second = timestamp % 60;
     document.getElementById("leftsecond1").className = 'main_item1_anim';
     document.getElementById("leftsecond2").className = 'main_item2_anim';
-    document.getElementById("leftsecond").innerHTML = checkNumber(second);
+    document.getElementById("leftsecond1").innerHTML = checkNumber(second + 1);
+    document.getElementById("leftsecond1_back").innerHTML = checkNumber(second);
+    if (second > 0) { document.getElementById("leftsecond1_back").innerHTML = checkNumber(second) }
+    else {
+        if (duration > 0) { document.getElementById("leftsecond1_back").innerHTML = 59; }
+        else { document.getElementById("leftsecond1_back").innerHTML = ""; }
+    }
     //document.getElementById("leftminutes").className = 'main_item';
     document.getElementById("leftminutes").innerHTML = minutes;
     //document.getElementById("lefthour").className = 'main_item';
@@ -198,49 +207,44 @@ function tickCountdown()
 
     document.getElementById("test").innerHTML = checkNumber(days);
 
-    if (days > 0) {
-        //document.getElementById("leftdays").className = 'main_item';
-        document.getElementById("leftdays").innerHTML = days;
-        let leftday = days;
-        let year = Math.floor(leftday / 365);
-        leftday -= (year * 365);
-        if (year > 0) {
-            //document.getElementById("leftyear").className='main_item';
-            document.getElementById("leftyear").innerHTML = year;
-        } else {
-            //document.getElementById("leftyear").className='main_item_hidden';
-            document.getElementById("leftyear").innerHTML = "";
+    let leftday = days;
+    let year = Math.floor(leftday / 365);
+    leftday -= (year * 365);
+
+    let month = Math.floor(leftday / 30);
+    leftday -= month * 30;
+
+    let week = Math.floor(leftday / 7);
+    leftday -= week * 7;
+
+    if (year > 0) {
+
+        if (document.getElementById("years") == null) {
+            let main_item = document.createElement("div");
+            main_item.className = "main_item_hidden";
+            main_item.id = "years_block";
+
+            let years_value = document.createElement("div");
+            years_value.id = "years";
+            years_value.className = "main_item";
+            years_value.innerHTML = checkNumber(year);
+
+            let years_marker = document.createElement("div");
+            years_marker.id = "years_marker";
+            years_marker.className = "main_item";
+            years_marker.innerHTML = "years";
+
+            main_item.prepend(years_value);
+            main_item.append(years_marker);
+
+            let display = document.getElementById("result");
+            display.prepend(main_item);
         }
-        let month = Math.floor(leftday / 30);
-        leftday -= month * 30;
-        if (month > 0)
-        {
-                //document.getElementById("leftmonth").className = 'main_item';
-                document.getElementById("leftmonth").innerHTML = month;
-                document.getElementById("leftdays").innerHTML = leftday;
-            }
-            else {
-                //document.getElementById("leftmonth").className = 'main_item_hidden';
-                document.getElementById("leftmonth").innerHTML = "";
-            }
-        let week = Math.floor(leftday / 7);
-        leftday -= week * 7;
-        if (week > 0)
-            {
-                //document.getElementById("leftweek").className = 'main_item';
-                document.getElementById("leftweek").innerHTML = week;
-                document.getElementById("leftdays").innerHTML = leftday;
-            }
-            else
-            {
-                //document.getElementById("leftweek").className = 'main_item_hidden';
-                document.getElementById("leftweek").innerHTML = "";
-            }
     }
-    else
-    {
-        //document.getElementById("leftdays").className = 'main_item_hidden';
-        document.getElementById("leftdays").innerHTML = "";
+    else {
+        let years_block = document.getElementById("years_block");
+        let display = document.getElementById("result");
+        display.removeChild(years_block);
     }
     if (duration > 0) setTimeout(tickCountdown, 1000);
 }
