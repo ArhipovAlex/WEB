@@ -241,15 +241,15 @@ function tickCountdown() {
             main_item.prepend(days_values);
             main_item.append(days_marker);
 
-            let display = document.getElementById("result");
-            display.prepend(main_item);
+            let hours_block = document.getElementById("lefthours");
+            hours_block.before(main_item);
         }
     }
     else {
         if (document.getElementById("days") != null) {
             let days_item = document.getElementById("days");
             let days_block = days_item.parentElement;
-            let display = document.getElementById("result");
+            let display = days_block.parentElement;
             display.removeChild(days_block);
         }
 
@@ -281,7 +281,7 @@ function tickCountdown() {
         if (document.getElementById("week") != null) {
             let week_item = document.getElementById("week");
             let week_block = week_item.parentElement;
-            let display = document.getElementById("result");
+            let display = week_block.parentElement;
             display.removeChild(week_block);
         }
     }
@@ -304,15 +304,22 @@ function tickCountdown() {
             main_item.prepend(month_values);
             main_item.append(month_marker);
 
-            let display = document.getElementById("result");
-            display.prepend(main_item);
+            if (document.getElementById("years") != null) {
+                let years_block = document.getElementById("years");
+                years_block.after(main_item);
+            }
+            else {
+                let display = document.getElementById("result");
+                display.prepend(main_item);
+            }
+            
         }
     }
     else {
         if (document.getElementById("month") != null) {
             let month_item = document.getElementById("month");
             let month_block = month_item.parentElement;
-            let display = document.getElementById("result");
+            let display = month_block.parentElement;
             display.removeChild(month_block);
         }
     }
@@ -345,7 +352,7 @@ function tickCountdown() {
         if (document.getElementById("years") != null) {
             let years_item = document.getElementById("years");
             let years_block = years_item.parentElement;
-            let display = document.getElementById("result");
+            let display = years_block.parentElement;
             display.removeChild(years_block);
         }
     }
