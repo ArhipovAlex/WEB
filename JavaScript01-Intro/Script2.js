@@ -130,8 +130,8 @@ document.getElementById("btnStart").onclick = function ()
     else
     { 
         btnStart.value = "Start";
-        document.getElementById("leftsecond1").className = 'main_item';
-        document.getElementById("leftsecond2").className = 'main_item';
+        document.getElementById("leftsecond").className = 'main_item';
+        document.getElementById("leftsecond_marker").className = 'main_item';
     }
     //let date = document.getElementById("targetDate").valueAsDate;
     //let time = document.getElementById("targetTime").valueAsDate;
@@ -157,8 +157,8 @@ function tickCountdown() {
     //document.getElementById("leftweek").innerHTML = "";
     //document.getElementById("leftdays").className = 'main_item_hidden';
     //document.getElementById("leftdays").innerHTML = "";
-    document.getElementById("leftsecond1").className = 'main_item';
-    document.getElementById("leftsecond2").className = 'main_item';
+    document.getElementById("leftsecond").className = 'main_item';
+    document.getElementById("leftsecond_marker").className = 'main_item';
 
     if (!document.getElementById("targetTime").disabled) return;
     let now = new Date();
@@ -191,21 +191,6 @@ function tickCountdown() {
     let minutes = Math.floor(timestamp / 60) % 60;
     timestamp -= minutes * 60;
     let second = timestamp % 60;
-    document.getElementById("leftsecond1").className = 'main_item1_anim';
-    document.getElementById("leftsecond2").className = 'main_item2_anim';
-    document.getElementById("leftsecond1").innerHTML = checkNumber(second + 1);
-    document.getElementById("leftsecond1_back").innerHTML = checkNumber(second);
-    if (second > 0) { document.getElementById("leftsecond1_back").innerHTML = checkNumber(second) }
-    else {
-        if (duration > 0) { document.getElementById("leftsecond1_back").innerHTML = 59; }
-        else { document.getElementById("leftsecond1_back").innerHTML = ""; }
-    }
-    //document.getElementById("leftminutes").className = 'main_item';
-    document.getElementById("leftminutes").innerHTML = minutes;
-    //document.getElementById("lefthour").className = 'main_item';
-    document.getElementById("lefthour").innerHTML = hours;
-
-    document.getElementById("test").innerHTML = checkNumber(days);
 
     let leftday = days;
     let year = Math.floor(leftday / 365);
@@ -217,12 +202,115 @@ function tickCountdown() {
     let week = Math.floor(leftday / 7);
     leftday -= week * 7;
 
+    document.getElementById("leftsecond").className = 'main_item1_anim';
+    document.getElementById("leftsecond_marker").className = 'main_item2_anim';
+    document.getElementById("leftsecond").innerHTML = checkNumber(second + 1);
+    document.getElementById("leftsecond_back").innerHTML = checkNumber(second);
+    if (second > 0) { document.getElementById("leftsecond_back").innerHTML = checkNumber(second) }
+    else {
+        if (duration > 0) { document.getElementById("leftsecond_back").innerHTML = 59; }
+        else { document.getElementById("leftsecond_back").innerHTML = ""; }
+    }
+    
+    //document.getElementById("leftminutes").className = 'main_item';
+    document.getElementById("leftminutes").innerHTML = minutes;
+    //document.getElementById("lefthour").className = 'main_item';
+    document.getElementById("lefthour").innerHTML = hours;
+    document.getElementById("test").innerHTML = checkNumber(days);
+
+    if (days > 0) {
+        if (document.getElementById("days") == null) {
+            let main_item = document.createElement("div");
+            main_item.className = "main_item_hidden";
+
+            let days_values = document.createElement("div");
+            days_values.id = "days";
+            days_values.className = "main_item";
+            days_values.innerHTML = checkNumber(days);
+
+            let days_marker = document.createElement("div");
+            days_marker.id = "days_marker";
+            days_marker.className = "main_item";
+            days_marker.innerHTML = "days";
+
+            main_item.prepend(days_values);
+            main_item > append(days_marker);
+
+            let display = document.getElementById("result");
+            display.prepend(main_item);
+        }
+    }
+    else {
+        let days_item = document.getElementById("days");
+        let days_block = days_item.parentElement;
+        let display = document.getElementById("result");
+        display.removeChild(days_block);
+    }
+
+    if (week > 0) {
+        if (document.getElementById("week") == null) {
+            let main_item = document.createElement("div");
+            main_item.className = "main_item_hidden";
+
+            let week_values = document.createElement("div");
+            week_values.id = "week";
+            week_values.className = "main_item";
+            week_values.innerHTML = checkNumber(week);
+
+            let week_marker = document.createElement("div");
+            week_marker.id = "week_marker";
+            week_marker.className = "main_item";
+            week_marker.innerHTML = "weeks";
+
+            main_item.prepend(week_values);
+            main_item > append(week_marker);
+
+            let display = document.getElementById("result");
+            display.prepend(main_item);
+        }
+    }
+    else {
+        let week_item = document.getElementById("week");
+        let week_block = week_item.parentElement;
+        let display = document.getElementById("result");
+        display.removeChild(week_block);
+    }
+
+    if (month > 0) {
+        if (document.getElementById("month") == null) {
+            let main_item = document.createElement("div");
+            main_item.className = "main_item_hidden";
+
+            let month_values = document.createElement("div");
+            month_values.id = "month";
+            month_values.className = "main_item";
+            month_values.innerHTML = checkNumber(month);
+
+            let month_marker = document.createElement("div");
+            month_marker.id = "month_marker";
+            month_marker.className = "main_item";
+            month_marker.innerHTML = "months";
+
+            main_item.prepend(month_values);
+            main_item.append(month_marker);
+
+            let display = document.getElementById("result");
+            display.prepend(main_item);
+        }
+    }
+    else {
+        let month_item = document.getElementById("month");
+        let month_block = month_item.parentElement;
+        let display = document.getElementById("result");
+        display.removeChild(month_block);
+    }
+
     if (year > 0) {
 
         if (document.getElementById("years") == null) {
             let main_item = document.createElement("div");
             main_item.className = "main_item_hidden";
-            main_item.id = "years_block";
+            /*main_item.id = "years_block";*/
 
             let years_value = document.createElement("div");
             years_value.id = "years";
@@ -242,9 +330,11 @@ function tickCountdown() {
         }
     }
     else {
-        let years_block = document.getElementById("years_block");
+        let years_item = document.getElementById("years");
+        let years_block = years_item.parentElement;
         let display = document.getElementById("result");
         display.removeChild(years_block);
     }
+    
     if (duration > 0) setTimeout(tickCountdown, 1000);
 }
