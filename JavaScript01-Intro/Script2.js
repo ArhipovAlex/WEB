@@ -204,18 +204,23 @@ function tickCountdown() {
 
     document.getElementById("leftsecond").className = 'main_item1_anim';
     document.getElementById("leftsecond_marker").className = 'main_item2_anim';
-    document.getElementById("leftsecond").innerHTML = checkNumber(second + 1);
-    document.getElementById("leftsecond_back").innerHTML = checkNumber(second);
+    document.getElementById("leftsecond").innerHTML = checkNumber(second);
+    document.getElementById("leftsecond_back").innerHTML = document.getElementById("leftsecond").innerHTML;
     if (second > 0) { document.getElementById("leftsecond_back").innerHTML = checkNumber(second) }
     else {
-        if (duration > 0) { document.getElementById("leftsecond_back").innerHTML = 59; }
+        if (duration > 0) {
+            document.getElementById("leftsecond_back").innerHTML = 59;
+            if (days == 7) days -= 1;
+            if (week == 4) week -= 1;
+            if (month == 12) month -= 1;
+        }
         else { document.getElementById("leftsecond_back").innerHTML = ""; }
     }
     
     //document.getElementById("leftminutes").className = 'main_item';
-    document.getElementById("leftminutes").innerHTML = minutes;
+    document.getElementById("leftminutes").innerHTML = checkNumber(minutes);
     //document.getElementById("lefthour").className = 'main_item';
-    document.getElementById("lefthour").innerHTML = hours;
+    document.getElementById("lefthour").innerHTML = checkNumber(hours);
     document.getElementById("test").innerHTML = checkNumber(days);
 
     if (days > 0) {
@@ -226,7 +231,7 @@ function tickCountdown() {
             let days_values = document.createElement("div");
             days_values.id = "days";
             days_values.className = "main_item";
-            days_values.innerHTML = checkNumber(days);
+            days_values.innerHTML = checkNumber(leftday);
 
             let days_marker = document.createElement("div");
             days_marker.id = "days_marker";
@@ -234,17 +239,20 @@ function tickCountdown() {
             days_marker.innerHTML = "days";
 
             main_item.prepend(days_values);
-            main_item > append(days_marker);
+            main_item.append(days_marker);
 
             let display = document.getElementById("result");
             display.prepend(main_item);
         }
     }
     else {
-        let days_item = document.getElementById("days");
-        let days_block = days_item.parentElement;
-        let display = document.getElementById("result");
-        display.removeChild(days_block);
+        if (document.getElementById("days") != null) {
+            let days_item = document.getElementById("days");
+            let days_block = days_item.parentElement;
+            let display = document.getElementById("result");
+            display.removeChild(days_block);
+        }
+
     }
 
     if (week > 0) {
@@ -270,10 +278,12 @@ function tickCountdown() {
         }
     }
     else {
-        let week_item = document.getElementById("week");
-        let week_block = week_item.parentElement;
-        let display = document.getElementById("result");
-        display.removeChild(week_block);
+        if (document.getElementById("week") != null) {
+            let week_item = document.getElementById("week");
+            let week_block = week_item.parentElement;
+            let display = document.getElementById("result");
+            display.removeChild(week_block);
+        }
     }
 
     if (month > 0) {
@@ -299,10 +309,12 @@ function tickCountdown() {
         }
     }
     else {
-        let month_item = document.getElementById("month");
-        let month_block = month_item.parentElement;
-        let display = document.getElementById("result");
-        display.removeChild(month_block);
+        if (document.getElementById("month") != null) {
+            let month_item = document.getElementById("month");
+            let month_block = month_item.parentElement;
+            let display = document.getElementById("result");
+            display.removeChild(month_block);
+        }
     }
 
     if (year > 0) {
@@ -330,10 +342,12 @@ function tickCountdown() {
         }
     }
     else {
-        let years_item = document.getElementById("years");
-        let years_block = years_item.parentElement;
-        let display = document.getElementById("result");
-        display.removeChild(years_block);
+        if (document.getElementById("years") != null) {
+            let years_item = document.getElementById("years");
+            let years_block = years_item.parentElement;
+            let display = document.getElementById("result");
+            display.removeChild(years_block);
+        }
     }
     
     if (duration > 0) setTimeout(tickCountdown, 1000);
