@@ -210,152 +210,108 @@ function tickCountdown() {
     else {
         if (duration > 0) {
             document.getElementById("leftsecond_back").innerHTML = 59;
-            if (days == 7) days -= 1;
-            if (week == 4) week -= 1;
-            if (month == 12) month -= 1;
+
         }
         else { document.getElementById("leftsecond_back").innerHTML = ""; }
     }
-    
+    if (leftday == 7) leftday -= 1;
+    if (week == 4) week -= 1;
+    if (month == 12) month -= 1;
     //document.getElementById("leftminutes").className = 'main_item';
     document.getElementById("leftminutes").innerHTML = checkNumber(minutes);
     //document.getElementById("lefthour").className = 'main_item';
     document.getElementById("lefthour").innerHTML = checkNumber(hours);
+
     document.getElementById("test").innerHTML = checkNumber(days);
 
-    if (days > 0) {
-        if (document.getElementById("days") == null) {
-            let main_item = document.createElement("div");
-            main_item.className = "main_item_hidden";
-
-            let days_values = document.createElement("div");
-            days_values.id = "days";
-            days_values.className = "main_item";
-            days_values.innerHTML = checkNumber(leftday);
-
-            let days_marker = document.createElement("div");
-            days_marker.id = "days_marker";
-            days_marker.className = "main_item";
-            days_marker.innerHTML = "days";
-
-            main_item.prepend(days_values);
-            main_item.append(days_marker);
-
-            let hours_block = document.getElementById("lefthours");
-            hours_block.before(main_item);
+    if (leftday > 0) {
+        if (document.getElementById("days_block") == null)
+        {
+            days_unit = createTimeBlock("days", leftday);
+            let hours_value = document.getElementById("lefthour");
+            let hours_block = hours_value.parentElement;
+            hours_block.before(days_unit);
         }
     }
     else {
-        if (document.getElementById("days") != null) {
-            let days_item = document.getElementById("days");
-            let days_block = days_item.parentElement;
-            let display = days_block.parentElement;
-            display.removeChild(days_block);
-        }
-
+        removeTimeBlock("days");
     }
 
     if (week > 0) {
-        if (document.getElementById("week") == null) {
-            let main_item = document.createElement("div");
-            main_item.className = "main_item_hidden";
+        if (document.getElementById("weeks_block") == null) {
 
-            let week_values = document.createElement("div");
-            week_values.id = "week";
-            week_values.className = "main_item";
-            week_values.innerHTML = checkNumber(week);
-
-            let week_marker = document.createElement("div");
-            week_marker.id = "week_marker";
-            week_marker.className = "main_item";
-            week_marker.innerHTML = "weeks";
-
-            main_item.prepend(week_values);
-            main_item > append(week_marker);
-
+            weeks_unit = createTimeBlock("weeks", week);
+            if (document.getElementById("month_block") != null) {
+                let month = document.getElementById("month_block");
+                month.after(weeks_unit);
+            }
+            else if (document.getElementById("years_block") != null) {
+                let years = document.getElementById("years_block");
+                years.after(weeks_unit);
+            }
             let display = document.getElementById("result");
-            display.prepend(main_item);
+            display.prepend(weeks_unit);
         }
     }
     else {
-        if (document.getElementById("week") != null) {
-            let week_item = document.getElementById("week");
-            let week_block = week_item.parentElement;
-            let display = week_block.parentElement;
-            display.removeChild(week_block);
-        }
+        removeTimeBlock("weeks");
     }
 
     if (month > 0) {
-        if (document.getElementById("month") == null) {
-            let main_item = document.createElement("div");
-            main_item.className = "main_item_hidden";
-
-            let month_values = document.createElement("div");
-            month_values.id = "month";
-            month_values.className = "main_item";
-            month_values.innerHTML = checkNumber(month);
-
-            let month_marker = document.createElement("div");
-            month_marker.id = "month_marker";
-            month_marker.className = "main_item";
-            month_marker.innerHTML = "months";
-
-            main_item.prepend(month_values);
-            main_item.append(month_marker);
-
-            if (document.getElementById("years") != null) {
-                let years_block = document.getElementById("years");
-                years_block.after(main_item);
+        if (document.getElementById("month_block") == null) {
+            month_unit = createTimeBlock("month", month);
+            if (document.getElementById("years_block") != null) {
+                let years_block = document.getElementById("years_block");
+                years_block.after(month_unit);
             }
             else {
                 let display = document.getElementById("result");
-                display.prepend(main_item);
+                display.prepend(month_unit);
             }
-            
         }
     }
     else {
-        if (document.getElementById("month") != null) {
-            let month_item = document.getElementById("month");
-            let month_block = month_item.parentElement;
-            let display = month_block.parentElement;
-            display.removeChild(month_block);
-        }
+        removeTimeBlock("month");
     }
 
     if (year > 0) {
-
-        if (document.getElementById("years") == null) {
-            let main_item = document.createElement("div");
-            main_item.className = "main_item_hidden";
-            /*main_item.id = "years_block";*/
-
-            let years_value = document.createElement("div");
-            years_value.id = "years";
-            years_value.className = "main_item";
-            years_value.innerHTML = checkNumber(year);
-
-            let years_marker = document.createElement("div");
-            years_marker.id = "years_marker";
-            years_marker.className = "main_item";
-            years_marker.innerHTML = "years";
-
-            main_item.prepend(years_value);
-            main_item.append(years_marker);
-
+        if (document.getElementById("years_block") == null) {
             let display = document.getElementById("result");
-            display.prepend(main_item);
+            display.prepend(createTimeBlock("years", year));
         }
     }
     else {
-        if (document.getElementById("years") != null) {
-            let years_item = document.getElementById("years");
-            let years_block = years_item.parentElement;
-            let display = years_block.parentElement;
-            display.removeChild(years_block);
-        }
+        removeTimeBlock("years");
     }
     
     if (duration > 0) setTimeout(tickCountdown, 1000);
+}
+
+////////////////////////////////
+function createTimeBlock(unit_name, value)
+{
+    let main_item = document.createElement("div");
+    main_item.className = "main_item_hidden";
+    main_item.id = `${unit_name}_block`;
+    let unit = document.createElement("div");
+    unit.id = `${unit_name}_unit`;
+    unit.className = "main_item";
+    unit.innerHTML = checkNumber(value);
+    let marker = document.createElement("div");
+    marker.id = `${unit_name}_marker`;
+    marker.className = "main_item";
+    marker.innerHTML = unit_name.charAt(0).toUpperCase() + unit_name.slice(1);
+    main_item.prepend(unit);
+    main_item.append(marker);
+    return main_item;
+}
+
+function removeTimeBlock(name)
+{
+    if (document.getElementById(`${name}_unit`) != null) {
+        let item = document.getElementById(`${name}_unit`);
+        let block = item.parentElement;
+        let display = block.parentElement;
+        display.removeChild(block);
+    }
 }
