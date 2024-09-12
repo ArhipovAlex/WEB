@@ -279,6 +279,7 @@ function tickCountdown() {
             let display = document.getElementById("result");
             display.prepend(createTimeBlock("years", year));
         }
+        else years_unit.innerHTML(checkNumber(year));
     }
     else {
         removeTimeBlock("years");
