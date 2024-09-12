@@ -176,7 +176,7 @@ function tickCountdown() {
     let duration = targetTime;
     //document.getElementById("result").innerHTML = duration + "<br>" + now;
     let timestamp = targetTime - now;
-    timestamp = Math.trunc(timestamp / 1000);
+    //timestamp = Math.trunc(timestamp / 1000);
     //timestamp *= 1000;
     document.getElementById("test").innerHTML = timestamp;
     //timestamp.setHours(timestamp.getHours() + currentTimeZoneOffsetInHours);
@@ -184,13 +184,21 @@ function tickCountdown() {
     //let startDate = new Date(0);
     //timestamp.setHours(timestamp.getHours() + currentTimeZoneOffsetInHours);
     //document.getElementById("result").innerHTML = (Math.round(Math.abs(timestamp) / (1000 * 3600 * 24),0)) + " дней " + timestamp.toTimeString();
-    let days = Math.floor(timestamp / 86400);
-    timestamp -= days * 86400;
-    let hours = Math.floor(timestamp / 3600) % 24;
-    timestamp -= hours * 3600;
-    let minutes = Math.floor(timestamp / 60) % 60;
-    timestamp -= minutes * 60;
-    let second = timestamp % 60;
+    const DAYS_IN_MONTH = 365 / 12;
+    const MILISECONDS_IN_SECOND = 1000;
+    const MILISECONDS_IN_MINUTE = MILISECONDS_IN_SECOND *60;
+    const MILISECONDS_IN_HOUR = MILISECONDS_IN_MINUTE*60;
+    const MILISECONDS_IN_DAY = MILISECONDS_IN_HOUR * 24;
+    const MILISECONDS_IN_WEEK = MILISECONDS_IN_DAY * 7;
+    const MILISECONDS_IN_MONTH = MILISECONDS_IN_WEEK * 4;
+    
+    let days = Math.floor(timestamp / MILISECONDS_IN_DAY);
+    timestamp -= days * MILISECONDS_IN_DAY;
+    let hours = Math.floor(timestamp / MILISECONDS_IN_HOUR)/* % 24*/;
+    timestamp -= hours * MILISECONDS_IN_HOUR;
+    let minutes = Math.floor(timestamp / MILISECONDS_IN_MINUTE)/* % MILISECONDS_IN_MINUTE*/;
+    timestamp -= minutes * MILISECONDS_IN_MINUTE;
+    let second = Math.floor(timestamp / MILISECONDS_IN_SECOND);
 
     let leftday = days;
     let year = Math.floor(leftday / 365);
@@ -279,7 +287,7 @@ function tickCountdown() {
             let display = document.getElementById("result");
             display.prepend(createTimeBlock("years", year));
         }
-        else years_unit.innerHTML(checkNumber(year));
+        else document.getElementById("years_unit").innerHTML = checkNumber(year);
     }
     else {
         removeTimeBlock("years");
