@@ -36,7 +36,7 @@
 		<input type="number" id="choiseMinutes" min="0" max="59" step="1" value="0" style="width:82px; height:50px;font-size:23px">
 		<input type="number" id="choiseSecond" min="0" max="59" step="1" value="0" style="width:82px; height:50px;font-size:23px">
 
-		<input type="date" id="targetDate" value="2025-09-05">
+		<input type="date" id="targetDate" value="2024-09-14">
 		<input type="time" id="targetTime" value="21:45">
 		<input type="button" id="btnStart" value="Start">
 		<div id="result" class="main">
@@ -60,9 +60,11 @@
 		<div id="test" style="font-size:58px; text-align:center"></div>
 	</div>
 	<div>
-		<audio id="notif" src="notify.mp3"></audio>
-		<input type="file" id="fileInput" hidden>
-		<button onclick="document.getElementById('fileInput').click();">Открыть диалоговое окно выбора файла</button>
+		<audio id="player" controls>
+			<source src="sound\ChildrenOfBodom-SleepingInMyCar.mp3" type="audio/mp3" />
+		</audio>
+		<input type="file" id="select_file">
+		<div id="selected_file"></div>
 	</div>
 	<script type="text/javascript" src="Script2.js"></script>
 </body>

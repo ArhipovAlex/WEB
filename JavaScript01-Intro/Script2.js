@@ -176,8 +176,8 @@ function tickCountdown() {
     let duration = targetTime;
     //document.getElementById("result").innerHTML = duration + "<br>" + now;
     let timestamp = targetTime - now;
-    //timestamp = Math.trunc(timestamp / 1000);
-    //timestamp *= 1000;
+    timestamp = Math.trunc(timestamp / 1000);
+    timestamp *= 1000;
     document.getElementById("test").innerHTML = timestamp;
     //timestamp.setHours(timestamp.getHours() + currentTimeZoneOffsetInHours);
     //timestamp = new Date(timestamp);
@@ -294,15 +294,24 @@ function tickCountdown() {
     }
     else {
         removeTimeBlock("weeks");
-    } 
-    if (duration > 0) setTimeout(tickCountdown, 1000);
-    if ((year == 0) && (month == 0) && (week == 0) && (leftday == 0) && (hours == 0) && (minutes == 0) && (second == 0))
-    {
-        var audio = new Audio(document.getElementById("fileInput").value);
-        audio.play();
-        setTimeout(tickCountdown, 100000000000);
     }
-    console.log(document.getElementById("fileInput").value);
+    console.log(document.getElementById('fileInput'));
+    console.log(`timestamp:${timestamp}`);
+    console.log(`leftday:${leftday}`);
+    if ((timestamp > 0) || (leftday > 0))
+        setTimeout(tickCountdown, 1000);
+    else
+    {
+        let audio = document.getElementById("player");
+        audio.play();
+    }
+}
+document.getElementById("select_file").onchange = function getSoundFile() {
+    let selected = document.getElementById("selected_file");
+    let select = document.getElementById("select_file");
+    selected.innerHTML = select.files[0].name;
+    let player = document.getElementById("player");
+    player.src = `sound\\${select.files[0].name}`;
 }
 
 ////////////////////////////////
