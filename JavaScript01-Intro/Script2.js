@@ -191,6 +191,7 @@ function tickCountdown() {
     const MILISECONDS_IN_DAY = MILISECONDS_IN_HOUR * 24;
     const MILISECONDS_IN_WEEK = MILISECONDS_IN_DAY * 7;
     const MILISECONDS_IN_MONTH = MILISECONDS_IN_WEEK * 4;
+    const MILISECONDS_IN_YEAR = MILISECONDS_IN_MONTH * 12;
     
     let days = Math.floor(timestamp / MILISECONDS_IN_DAY);
     timestamp -= days * MILISECONDS_IN_DAY;
@@ -204,7 +205,7 @@ function tickCountdown() {
     let year = Math.floor(leftday / 365);
     leftday -= (year * 365);
 
-    let month = Math.floor(leftday / 30);
+    let month = Math.floor(leftday / DAYS_IN_MONTH);
     leftday -= month * 30;
 
     let week = Math.floor(leftday / 7);
@@ -245,26 +246,6 @@ function tickCountdown() {
         removeTimeBlock("days");
     }
 
-    if (week > 0) {
-        if (document.getElementById("weeks_block") == null) {
-
-            weeks_unit = createTimeBlock("weeks", week);
-            if (document.getElementById("month_block") != null) {
-                let month = document.getElementById("month_block");
-                month.after(weeks_unit);
-            }
-            else if (document.getElementById("years_block") != null) {
-                let years = document.getElementById("years_block");
-                years.after(weeks_unit);
-            }
-            let display = document.getElementById("result");
-            display.prepend(weeks_unit);
-        }
-    }
-    else {
-        removeTimeBlock("weeks");
-    }
-
     if (month > 0) {
         if (document.getElementById("month_block") == null) {
             month_unit = createTimeBlock("month", month);
@@ -282,6 +263,8 @@ function tickCountdown() {
         removeTimeBlock("month");
     }
 
+
+
     if (year > 0) {
         if (document.getElementById("years_block") == null) {
             let display = document.getElementById("result");
@@ -292,8 +275,34 @@ function tickCountdown() {
     else {
         removeTimeBlock("years");
     }
-    
+
+    if (week > 0) {
+        if (document.getElementById("weeks_block") == null) {
+
+            weeks_unit = createTimeBlock("weeks", week);
+            if (document.getElementById("years_block") != null) {
+                let years = document.getElementById("years_block");
+                years.after(weeks_unit);
+            }
+            else if (document.getElementById("month_block") != null) {
+                let month = document.getElementById("month_block");
+                month.after(weeks_unit);
+            }
+            let display = document.getElementById("result");
+            display.prepend(weeks_unit);
+        }
+    }
+    else {
+        removeTimeBlock("weeks");
+    } 
     if (duration > 0) setTimeout(tickCountdown, 1000);
+    if ((year == 0) && (month == 0) && (week == 0) && (leftday == 0) && (hours == 0) && (minutes == 0) && (second == 0))
+    {
+        var audio = new Audio(document.getElementById("fileInput").value);
+        audio.play();
+        setTimeout(tickCountdown, 100000000000);
+    }
+    console.log(document.getElementById("fileInput").value);
 }
 
 ////////////////////////////////
