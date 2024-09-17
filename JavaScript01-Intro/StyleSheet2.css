@@ -69,6 +69,8 @@
 }
 .main_item_hidden{
     background-color:none;
+    font-family:digital-7;
+    color:blue;
 }
 
 .main_item1_anim {
@@ -119,4 +121,9 @@
     to {
         transform: rotateX(0deg);
     }
+}
+
+@font-face {
+    font-family: digital-7;
+    src: url('fonts/digital-7.ttf');
 }

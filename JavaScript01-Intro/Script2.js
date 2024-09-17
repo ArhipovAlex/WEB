@@ -192,7 +192,7 @@ function tickCountdown() {
     const MILISECONDS_IN_WEEK = MILISECONDS_IN_DAY * 7;
     const MILISECONDS_IN_MONTH = MILISECONDS_IN_WEEK * 4;
     const MILISECONDS_IN_YEAR = MILISECONDS_IN_MONTH * 12;
-    
+    let losttime = timestamp;
     let days = Math.floor(timestamp / MILISECONDS_IN_DAY);
     timestamp -= days * MILISECONDS_IN_DAY;
     let hours = Math.floor(timestamp / MILISECONDS_IN_HOUR)/* % 24*/;
@@ -298,7 +298,7 @@ function tickCountdown() {
     console.log(document.getElementById('fileInput'));
     console.log(`timestamp:${timestamp}`);
     console.log(`leftday:${leftday}`);
-    if ((timestamp > 0) || (leftday > 0))
+    if (losttime > 0)
         setTimeout(tickCountdown, 1000);
     else
     {
@@ -341,4 +341,9 @@ function removeTimeBlock(name)
         let display = block.parentElement;
         display.removeChild(block);
     }
+}
+
+function LoadFiles()
+{
+    let fs = aqFileSystem.FindFiles("sound","*.*");
 }
