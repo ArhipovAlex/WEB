@@ -8,12 +8,12 @@
 
 
 <div style="display:flex; justify-content:flex-start;">
-	@*<input type="number" min="1" max="10" style="margin-right:5px;" value="@Step" @onchange="SetStep"/>*@
+	<input type="number" min="1" max="10" style="margin-right:5px;" value="@Step" @onchange="SetStep"/>
 	<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
     <input type="text" @oninput="OnChange"/>
     <p>@text</p>
 </div>
-<div style="background-color:lightblue" @onmouseover="onMouseOver" @onmouseout="onMouseOut">
+<div style="background-color:lightblue" @onmouseover="onMouseOver" @onmouseout="onMouseOut" @onmousedown='()=>divText="Mouse Down"'>
     @divText;
 </div>
 @if(@currentCount>5)
@@ -42,10 +42,9 @@
                                       //} = 1;
     string text = "";
     string divText = "Mouse out";
-    private void IncrementCount()=>currentCount++;
-    private void SetStep(ChangeEventArgs e)=>Step = (int)e.Value!;
+    private void IncrementCount()=>currentCount+=Step;
+    private void SetStep(ChangeEventArgs e)=>Step = Convert.ToInt32(e.Value!);
     private void OnChange(ChangeEventArgs e)=>text = (string)e.Value!;
     private void onMouseOver(MouseEventArgs e)=>divText = "Mouse over";
     private void onMouseOut(MouseEventArgs e)=>divText = "Mouse out";
-
 }
